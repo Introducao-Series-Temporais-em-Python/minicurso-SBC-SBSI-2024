@@ -1,0 +1,2480 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{capuxedtulo-1}{%
+\section{\texorpdfstring{\textbf{Capítulo
+1}}{Capítulo 1}}\label{capuxedtulo-1}}
+
+\hypertarget{introduuxe7uxe3o-uxe0s-suxe9ries-temporais-uma-abordagem-pruxe1tica-em-python}{%
+\section{\texorpdfstring{\textbf{Introdução às Séries Temporais: Uma
+Abordagem Prática em
+Python}}{Introdução às Séries Temporais: Uma Abordagem Prática em Python}}\label{introduuxe7uxe3o-uxe0s-suxe9ries-temporais-uma-abordagem-pruxe1tica-em-python}}
+
+Rogério de Oliveira, Orlando Y. Albarracin, Gustavo Rocha da Silva
+
+\hypertarget{abstract}{%
+\subsubsection{\texorpdfstring{\textbf{Abstract}}{Abstract}}\label{abstract}}
+
+This short course is a practical course that introduces the main
+concepts of time series and how to manipulate and create time series
+models in Python. Includes the implementation and analysis of ARIMA-type
+statistical models and implementations that employ classical and deep
+machine learning. Practical exercises are included in the course and a
+final project is suggested. As support material for the course, the
+language of this text and its references were adapted for this purpose.
+In the end, the participant is expected to be able to understand,
+analyze and make predictions from series of data in different contexts,
+and apply these tools in their own research and professional practice.
+
+\hypertarget{resumo}{%
+\subsubsection{\texorpdfstring{\textbf{Resumo}}{Resumo}}\label{resumo}}
+
+Este minicurso é um curso prático que apresenta os principais conceitos
+de séries temporais e como manipular e criar modelos de séries temporais
+em Python. Inclui a implementação e análise de modelos estatísticos do
+tipo ARIMA e implementações que empregam aprendizado de máquina clássico
+e profundo. Exercícios práticos estão incluídos no curso e é sugerido um
+projeto final. Sendo material de apoio ao curso, a linguagem deste texto
+e suas referências foram adaptadas para esse propósito. Ao final,
+espera-se que o participante seja capaz de compreender, analisar e fazer
+previsões a partir de séries de dados em diferentes contextos, e aplicar
+essas ferramentas na sua própria pesquisa e prática profissional.
+
+\hypertarget{1-introduuxe7uxe3o}{%
+\section{\texorpdfstring{\textbf{1.
+Introdução}}{1. Introdução}}\label{1-introduuxe7uxe3o}}
+
+Séries temporais fazem parte de nosso dia a dia e podem ser encontradas
+em praticamente qualquer área, das ciências físicas e engenharias, às
+áreas de saúde e de negócios. Análises do comportamento da série, busca
+de padrões e sazonalidades, simulações e previsões são alguns dos
+resultados úteis que podemos obter de séries de dados, o que se tornou
+uma necessidade e um desafio em muitos campos. Este minicurso oferece
+uma introdução prática à análise e previsão de séries temporais
+utilizando a linguagem de programação \texttt{Python}. Embora existam
+várias formas de se abordar o problema de séries temporais, este
+minicurso se concentra no uso de modelos auto-regressivos integrados de
+médias móveis (ARIMA), um dos modelos estatísticos mais aplicados a
+séries temporais, e no uso de técnicas de aprendizado de máquina. O
+curso traz exemplos, aplicações e exercícios com dados sintéticos e
+reais de diversas áreas. Ao final, espera-se que o participante seja
+capaz de entender, analisar e fazer previsões de séries de dados,
+podendo aplicar essas ferramentas em suas próprias pesquisas e prática
+profissional.
+
+O curso está baseado no livro \textbf{Introdução às Séries Temporais:
+Uma Abordagem Prática em Python} (Oliveira, Albarracin e Silva, 2024),
+dos mesmos autores deste curso. Uma versão online está disponível no
+site do livro,
+\url{https://github.com/Introducao-Series-Temporais-em-Python}, onde
+podem ser encontrados, incluindo este texto, todos os códigos e dados
+empregados, os exercícios e soluções, e outros materiais complementares.
+
+\hypertarget{2-introduuxe7uxe3o-uxe0s-suxe9ries-temporais}{%
+\section{\texorpdfstring{\textbf{2. Introdução às séries
+temporais}}{2. Introdução às séries temporais}}\label{2-introduuxe7uxe3o-uxe0s-suxe9ries-temporais}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}imports\textasciigrave{}}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\OperatorTok{\%}\NormalTok{matplotlib inline}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\CommentTok{\# import matplotlib.ticker as ticker}
+\ImportTok{import}\NormalTok{ warnings}
+
+\ImportTok{from}\NormalTok{ datetime }\ImportTok{import}\NormalTok{ datetime }\ImportTok{as}\NormalTok{ dt}
+
+\NormalTok{path }\OperatorTok{=} \StringTok{\textquotesingle{}https://github.com/Introducao{-}Series{-}Temporais{-}em{-}Python/Book/raw/main/Data/\textquotesingle{}}
+
+\NormalTok{course\_path }\OperatorTok{=} \StringTok{\textquotesingle{}https://github.com/Rogerio{-}mack/SBSI\_2024\_ts\_short\_course/raw/main\textquotesingle{}}
+
+\CommentTok{\# plt.style.use([ \textquotesingle{}grayscale\textquotesingle{} , \textquotesingle{}https://github.com/Introducao{-}Series{-}Temporais{-}em{-}Python/Book/raw/main/tsp.mplstyle\textquotesingle{} ])}
+\NormalTok{plt.style.use([ }\StringTok{\textquotesingle{}https://github.com/Introducao{-}Series{-}Temporais{-}em{-}Python/Book/raw/main/tsp.mplstyle\textquotesingle{}}\NormalTok{ ])}
+
+\NormalTok{plt.rcParams[}\StringTok{\textquotesingle{}axes.titlesize\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \FloatTok{12.0}
+\NormalTok{plt.rcParams[}\StringTok{\textquotesingle{}figure.titlesize\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \FloatTok{12.0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}tspplot()\textasciigrave{}}
+\KeywordTok{def}\NormalTok{ tspplot(ts}\OperatorTok{=}\VariableTok{None}\NormalTok{,label}\OperatorTok{=}\VariableTok{None}\NormalTok{,title}\OperatorTok{=}\VariableTok{None}\NormalTok{,ax}\OperatorTok{=}\VariableTok{None}\NormalTok{,linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}solid\textquotesingle{}}\NormalTok{,alpha}\OperatorTok{=}\DecValTok{1}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{,nr\_xticks}\OperatorTok{=}\VariableTok{None}\NormalTok{,nr\_yticks}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+
+  \ImportTok{import}\NormalTok{ matplotlib.ticker }\ImportTok{as}\NormalTok{ ticker}
+
+  \ControlFlowTok{if}\NormalTok{ ax }\KeywordTok{is} \VariableTok{None}\NormalTok{:}
+\NormalTok{    fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots()}
+
+  \ControlFlowTok{if}\NormalTok{ label }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    ax.plot(ts, label}\OperatorTok{=}\NormalTok{label, linestyle}\OperatorTok{=}\NormalTok{linestyle, lw}\OperatorTok{=}\NormalTok{lw)}
+  \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{    ax.plot(ts, linestyle}\OperatorTok{=}\NormalTok{linestyle,lw}\OperatorTok{=}\NormalTok{lw,alpha}\OperatorTok{=}\NormalTok{alpha)}
+
+  \ControlFlowTok{if}\NormalTok{ title }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    ax.set\_title(title)}
+
+  \ControlFlowTok{if}\NormalTok{ nr\_xticks }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    ax.xaxis.set\_major\_locator(ticker.MaxNLocator(nr\_xticks))}
+
+  \ControlFlowTok{if}\NormalTok{ nr\_yticks }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    ax.yaxis.set\_major\_locator(ticker.MaxNLocator(nr\_yticks))}
+
+  \ControlFlowTok{if}\NormalTok{ label }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    plt.legend()}
+
+\NormalTok{  plt.tight\_layout()}
+
+  \ControlFlowTok{return}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}tspdisplay()\textasciigrave{}}
+\KeywordTok{class}\NormalTok{ tspdisplay(}\BuiltInTok{object}\NormalTok{):}
+    \CommentTok{\# Adaptado de https://jakevdp.github.io/PythonDataScienceHandbook/index.html}
+    \CommentTok{"""Display HTML representation of multiple objects"""}
+\NormalTok{    template }\OperatorTok{=} \StringTok{"""\textless{}div style="float: left; padding: 10px;"\textgreater{}}
+\StringTok{    \textless{}hr\textgreater{}}
+\StringTok{    \textless{}h3 style=\textquotesingle{}font{-}family:"Courier New", Courier, monospace\textquotesingle{}\textgreater{}}\SpecialCharTok{\{0\}}\StringTok{\textless{}/h3\textgreater{}\textless{}hr\textgreater{}}\SpecialCharTok{\{1\}}
+\StringTok{    \textless{}/div\textgreater{}"""}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, }\OperatorTok{*}\NormalTok{args):}
+        \VariableTok{self}\NormalTok{.args }\OperatorTok{=}\NormalTok{ args}
+
+    \KeywordTok{def}\NormalTok{ \_repr\_html\_(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{.join(}\VariableTok{self}\NormalTok{.template.}\BuiltInTok{format}\NormalTok{(a, }\BuiltInTok{eval}\NormalTok{(a }\OperatorTok{+} \StringTok{\textquotesingle{}.head()\textquotesingle{}}\NormalTok{).\_repr\_html\_())}
+                         \ControlFlowTok{for}\NormalTok{ a }\KeywordTok{in} \VariableTok{self}\NormalTok{.args)}
+
+    \KeywordTok{def} \FunctionTok{\_\_repr\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{.join(a }\OperatorTok{+} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}} \OperatorTok{+} \BuiltInTok{repr}\NormalTok{(}\BuiltInTok{eval}\NormalTok{(a }\OperatorTok{+} \StringTok{\textquotesingle{}.head()\textquotesingle{}}\NormalTok{))}
+                           \ControlFlowTok{for}\NormalTok{ a }\KeywordTok{in} \VariableTok{self}\NormalTok{.args)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}tspsimulate()\textasciigrave{}}
+\ImportTok{import}\NormalTok{ ipywidgets }\ImportTok{as}\NormalTok{ widgets}
+\ImportTok{from}\NormalTok{ statsmodels.tsa.seasonal }\ImportTok{import}\NormalTok{ seasonal\_decompose}
+
+\KeywordTok{def}\NormalTok{ tspsimulate(nr\_months}\OperatorTok{=}\DecValTok{60}\NormalTok{, beta\_0}\OperatorTok{=}\DecValTok{1}\NormalTok{, beta\_1}\OperatorTok{=}\DecValTok{2}\NormalTok{, beta\_2}\OperatorTok{=}\DecValTok{0}\NormalTok{, beta\_3}\OperatorTok{=}\DecValTok{0}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.2}\NormalTok{, seasons\_month\_len}\OperatorTok{=}\DecValTok{10}\NormalTok{, noise}\OperatorTok{=}\FloatTok{0.2}\NormalTok{, model}\OperatorTok{=}\StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{, show\_plot}\OperatorTok{=}\VariableTok{False}\NormalTok{, title}\OperatorTok{=}\StringTok{\textquotesingle{}TS Sample\textquotesingle{}}\NormalTok{):}
+\NormalTok{  np.seed }\OperatorTok{=} \DecValTok{123}
+\NormalTok{  index\_dates }\OperatorTok{=}\NormalTok{ pd.date\_range(start}\OperatorTok{=}\StringTok{\textquotesingle{}1/1/2000\textquotesingle{}}\NormalTok{, periods}\OperatorTok{=}\NormalTok{nr\_months, freq}\OperatorTok{=}\StringTok{\textquotesingle{}M\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  t }\OperatorTok{=}\NormalTok{ np.arange(}\DecValTok{0}\NormalTok{,}\BuiltInTok{len}\NormalTok{(index\_dates),}\DecValTok{1}\NormalTok{)}
+\NormalTok{  n }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(t)}
+
+\NormalTok{  T }\OperatorTok{=}\NormalTok{ beta\_0 }\OperatorTok{+}\NormalTok{ beta\_1}\OperatorTok{*}\NormalTok{t }\OperatorTok{+} \OperatorTok{+}\NormalTok{ beta\_2}\OperatorTok{*}\NormalTok{t}\OperatorTok{**}\DecValTok{2} \OperatorTok{+}\NormalTok{ beta\_3}\OperatorTok{*}\NormalTok{t}\OperatorTok{**}\DecValTok{3}
+\NormalTok{  S }\OperatorTok{=}\NormalTok{ np.sin( np.arange(}\DecValTok{0}\NormalTok{,}\BuiltInTok{len}\NormalTok{(index\_dates),}\DecValTok{1}\NormalTok{) }\OperatorTok{*} \DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi}\OperatorTok{/}\NormalTok{seasons\_month\_len)}
+\NormalTok{  S }\OperatorTok{=}\NormalTok{ S }\CommentTok{\# only positives values}
+\NormalTok{  S }\OperatorTok{=}\NormalTok{ S }\OperatorTok{*}\NormalTok{ T.mean() }\OperatorTok{*}\NormalTok{ alpha }\CommentTok{\# scale}
+\NormalTok{  R }\OperatorTok{=}\NormalTok{ np.random.sample(n)}
+\NormalTok{  R }\OperatorTok{=}\NormalTok{ R }\CommentTok{\# only positives values}
+\NormalTok{  R }\OperatorTok{=}\NormalTok{ R }\OperatorTok{*}\NormalTok{ T.mean() }\OperatorTok{*}\NormalTok{ noise }\CommentTok{\# scale}
+
+  \ControlFlowTok{if}\NormalTok{ model }\OperatorTok{==} \StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{:}
+\NormalTok{    Y }\OperatorTok{=}\NormalTok{ T }\OperatorTok{+}\NormalTok{ S }\OperatorTok{+}\NormalTok{ R}
+  \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{    Y }\OperatorTok{=}\NormalTok{ T }\OperatorTok{*}\NormalTok{ S }\OperatorTok{*}\NormalTok{ R}
+
+\NormalTok{  Y }\OperatorTok{=}\NormalTok{ Y }\OperatorTok{+}\NormalTok{ np.}\BuiltInTok{abs}\NormalTok{(Y.}\BuiltInTok{min}\NormalTok{()) }\OperatorTok{+} \DecValTok{1} \CommentTok{\# just to create only positive values}
+
+\NormalTok{  df }\OperatorTok{=}\NormalTok{ pd.DataFrame()}
+\NormalTok{  df.index }\OperatorTok{=}\NormalTok{ index\_dates}
+\NormalTok{  df[}\StringTok{\textquotesingle{}t\textquotesingle{}}\NormalTok{], df[}\StringTok{\textquotesingle{}Y\textquotesingle{}}\NormalTok{], df[}\StringTok{\textquotesingle{}T\textquotesingle{}}\NormalTok{], df[}\StringTok{\textquotesingle{}S\textquotesingle{}}\NormalTok{], df[}\StringTok{\textquotesingle{}R\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ t, Y, T, S, R}
+
+  \KeywordTok{global}\NormalTok{ ts1}
+\NormalTok{  ts1 }\OperatorTok{=}\NormalTok{ df}
+
+\NormalTok{  decomp }\OperatorTok{=}\NormalTok{ seasonal\_decompose(df.Y, model}\OperatorTok{=}\NormalTok{model, period}\OperatorTok{=}\NormalTok{seasons\_month\_len)}
+
+  \ControlFlowTok{if}\NormalTok{ show\_plot:}
+\NormalTok{    fig }\OperatorTok{=}\NormalTok{ decomp.plot()}
+\NormalTok{    fig.set\_size\_inches((}\DecValTok{9}\NormalTok{, }\DecValTok{7}\NormalTok{))}
+
+    \ControlFlowTok{if}\NormalTok{ title }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{      plt.suptitle(title,y}\OperatorTok{=}\FloatTok{1.05}\NormalTok{)}
+
+\NormalTok{    plt.tight\_layout()}
+\NormalTok{    plt.show()}
+
+  \CommentTok{\# plt.plot(df[\textquotesingle{}T\textquotesingle{}])}
+  \CommentTok{\# plt.show()}
+
+  \CommentTok{\# plt.plot(df[\textquotesingle{}S\textquotesingle{}])}
+  \CommentTok{\# plt.show()}
+
+  \ControlFlowTok{return}\NormalTok{ ts1}
+
+\NormalTok{tspsimulate\_ts }\OperatorTok{=}\NormalTok{ widgets.interactive(tspsimulate,  alpha}\OperatorTok{=}\NormalTok{(}\FloatTok{0.2}\NormalTok{,}\DecValTok{10}\NormalTok{), beta\_0}\OperatorTok{=}\NormalTok{(}\OperatorTok{{-}}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{), beta\_1}\OperatorTok{=}\NormalTok{(}\OperatorTok{{-}}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{), beta\_2}\OperatorTok{=}\NormalTok{(}\OperatorTok{{-}}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{), beta\_3}\OperatorTok{=}\NormalTok{(}\OperatorTok{{-}}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{) ,nr\_months}\OperatorTok{=}\NormalTok{(}\DecValTok{40}\NormalTok{,}\DecValTok{120}\NormalTok{,}\DecValTok{1}\NormalTok{), seasons\_month\_len}\OperatorTok{=}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{3}\NormalTok{), noise}\OperatorTok{=}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{0.01}\NormalTok{), model}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}multiplicative\textquotesingle{}}\NormalTok{], show\_plot}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tspsimulate\_ts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}tspdecompose()\textasciigrave{}}
+\KeywordTok{def}\NormalTok{ tspdecompose(df,model}\OperatorTok{=}\StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{,title}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+  \ImportTok{from}\NormalTok{ statsmodels.tsa.seasonal }\ImportTok{import}\NormalTok{ seasonal\_decompose}
+
+\NormalTok{  decomp }\OperatorTok{=}\NormalTok{ seasonal\_decompose(df, model}\OperatorTok{=}\StringTok{\textquotesingle{}multiplicative\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  fig }\OperatorTok{=}\NormalTok{ decomp.plot()}
+\NormalTok{  fig.set\_size\_inches((}\DecValTok{9}\NormalTok{, }\DecValTok{7}\NormalTok{))}
+
+  \ControlFlowTok{if}\NormalTok{ title }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{    plt.suptitle(title,y}\OperatorTok{=}\FloatTok{1.05}\NormalTok{)}
+
+\NormalTok{  plt.tight\_layout()}
+\NormalTok{  plt.show()}
+
+  \ControlFlowTok{return}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Uma \emph{Série Temporal} é uma sequência de observações
+registradas em intervalos de tempo regulares.}
+\end{quote}
+
+Essas observações são \emph{medidas} tomadas ou encontradas a tempos
+regulares, e você certamente já se deparou com dados como valores anuais
+do PIB, preços diários de ações e commodities, quantidade de \emph{hits}
+diários em página Web ou site, ou aumento de temperatura global anual.
+São dados muito comuns e medidos a intervalos regulares (hora, dia, mês
+etc.). Séries com intervalos muito curtos (segundos ou menos) são ainda
+encontradas na física e biomedicina, e intervalos muito longos, de
+décadas ou mais, são encontradas na astronomia e geologia. Aqui a maior
+parte dos exemplos e exercícios empregam séries diárias, mensais ou
+anuais, mas os mesmos procedimentos são igualmente aplicáveis a qualquer
+série.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown}
+\NormalTok{datasets }\OperatorTok{=}\NormalTok{ pd.read\_csv(path }\OperatorTok{+} \StringTok{\textquotesingle{}datasets.csv\textquotesingle{}}\NormalTok{, index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+
+\NormalTok{show\_files }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}gas\_consumption.csv\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}pharma\_sales.csv\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}google\_trends\_tesla.csv\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}covid\_brasil.csv\textquotesingle{}}\NormalTok{ ]}
+
+\NormalTok{title\_files }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}Consumo de gás para a produção de energia elétrica\textquotesingle{}}\NormalTok{,}
+               \StringTok{\textquotesingle{}Volume mensal de vendas de anti{-}histamínicos\textquotesingle{}}\NormalTok{,}
+               \StringTok{"Consultas \textquotesingle{}Tesla\textquotesingle{} no Google (Google Trends)"}\NormalTok{,}
+               \StringTok{\textquotesingle{}Número de novos casos de COVID no Brasil\textquotesingle{}}\NormalTok{ ]}
+
+\ControlFlowTok{for}\NormalTok{ i, axis }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(fig.axes):}
+  \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{\textless{}} \DecValTok{4}\NormalTok{:}
+\NormalTok{    df }\OperatorTok{=}\NormalTok{ pd.read\_csv(path }\OperatorTok{+}\NormalTok{ show\_files[i],index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{    tspplot(df[ df.columns[}\DecValTok{0}\NormalTok{] ],title}\OperatorTok{=}\NormalTok{title\_files[i],ax}\OperatorTok{=}\NormalTok{axis,nr\_xticks}\OperatorTok{=}\DecValTok{5}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{    ax }\OperatorTok{=}\NormalTok{ fig.axes[}\DecValTok{4}\NormalTok{::]}
+
+\ImportTok{import}\NormalTok{ matplotlib.ticker }\ImportTok{as}\NormalTok{ ticker}
+
+\CommentTok{\# fig, ax = plt.subplots(1,2,figsize=(12,3.5))}
+
+\NormalTok{global\_violence }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/global\_violence.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ global\_violence[ global\_violence[}\StringTok{\textquotesingle{}Category\textquotesingle{}}\NormalTok{] }\OperatorTok{==} \StringTok{\textquotesingle{}Serious assault\textquotesingle{}}\NormalTok{][[}\StringTok{\textquotesingle{}Country\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}VALUE\textquotesingle{}}\NormalTok{]]}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ data.sort\_index()}
+\ControlFlowTok{for}\NormalTok{ country }\KeywordTok{in}\NormalTok{ data.Country.unique():}
+\NormalTok{  ax[}\DecValTok{0}\NormalTok{].plot(data[ data.Country }\OperatorTok{==}\NormalTok{ country ].VALUE, label}\OperatorTok{=}\NormalTok{country, lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Casos de assalto por 100.000 habitantes\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].xaxis.set\_major\_locator(ticker.MaxNLocator(}\DecValTok{5}\NormalTok{))}
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].legend()}
+
+\NormalTok{GDP\_BR\_AR }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/GDP\_BR\_AR.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{sp500 }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/sp500.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{ country }\KeywordTok{in}\NormalTok{ GDP\_BR\_AR.country.unique():}
+\NormalTok{  ax[}\DecValTok{1}\NormalTok{].plot(GDP\_BR\_AR[ GDP\_BR\_AR.country }\OperatorTok{==}\NormalTok{ country ][}\StringTok{\textquotesingle{}GDP (Current USD)\textquotesingle{}}\NormalTok{]}\OperatorTok{/}\DecValTok{100000}\NormalTok{, label}\OperatorTok{=}\NormalTok{country, lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{ax2 }\OperatorTok{=}\NormalTok{ ax[}\DecValTok{1}\NormalTok{].twinx()}
+\NormalTok{ax2.plot(sp500[sp500.index.year }\OperatorTok{\textgreater{}} \DecValTok{1983}\NormalTok{][}\StringTok{\textquotesingle{}Adj Close\textquotesingle{}}\NormalTok{].resample(}\StringTok{\textquotesingle{}Y\textquotesingle{}}\NormalTok{).mean(), }\StringTok{\textquotesingle{}k:\textquotesingle{}}\NormalTok{, label}\OperatorTok{=}\StringTok{\textquotesingle{}SP500\textquotesingle{}}\NormalTok{, lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}GDP Brasil, Argentina e SP500\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].xaxis.set\_major\_locator(ticker.MaxNLocator(}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{ax2.legend()}
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].legend()}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+
+
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/ec86f871905afac3eb61dbda0bc15e1f50bfd0ec.png}
+
+\textbf{Figura 1. Diversos exemplos de séries temporais em diferentes
+áreas de domínio.}
+
+De acordo com o seu objetivo você pode estar interessado em diferentes
+tarefas aplicadas a uma série temporal:
+
+\begin{enumerate}
+\tightlist
+\item
+  Fazer previsões de valores futuros
+\item
+  Entender o mecanismo gerador da série
+\item
+  Descrever e comparar o comportamento da série
+\item
+  Procurar periodicidades e padrões relevantes
+\item
+  Identificar anomalias
+\item
+  Simular a série de dados
+\end{enumerate}
+
+e, certamente, fazer previsões de valores futuros desempenha um papel
+bastante importante. Em todos os casos busca-se criar um modelo que se
+pretende útil para análise e aqui nos concentraremos unicamente em
+modelos auto-regressivos integrados de médias móveis (ARIMA) e de
+aprendizado de máquina supervisionado para previsões de valores futuros.
+Ambos são \emph{modelos paramétricos} (possuem um número finito de
+parâmetros) e modelam as séries no \emph{domínio do tempo}
+(diferentemente de modelos que empregam a frequência ou o espaço de
+estados), e estão entre os modelos mais amplamente aplicados na
+economia, finanças, engenharias e outras áreas.
+
+\hypertarget{21-decomposiuxe7uxe3o-de-suxe9ries-temporais}{%
+\subsection{2.1. Decomposição de séries
+temporais}\label{21-decomposiuxe7uxe3o-de-suxe9ries-temporais}}
+
+A ideia de construir um modelo é a de criarmos uma simplificação útil
+dos dados e no caso de séries temporais o modelo de decomposição é o
+procedimento clássico.
+
+Em geral decompomos uma série temporal em componentes onde cada um busca
+modelar um tipo de padrão ou comportamento da série:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tendência}
+\item
+  \textbf{Sazonalidade}
+\item
+  \textbf{Resíduos}
+\end{itemize}
+
+A \textbf{tendência} apresenta o comportamento da série no longo prazo,
+o aumento ou diminuição dos valores da série no longo prazo, como o
+crescimento da temperatura global ano a ano. A componente
+\textbf{sazonalidade} apresenta o padrão sazonal da série, como mudanças
+que ocorrem com alguma periodicidade ao longo do tempo. É o caso dos
+acréscimos e decréscimos de temperatura que ocorrem ao longo das
+estações do ano, independentemente da elevação das temperaturas no longo
+prazo. Por último, os \textbf{resíduos}, apresentam o comportamento
+estocástica, ou \emph{aleatório} da série, e que não sabemos explicar.
+Correspondem, por exemplo, às diferenças de temperatura entre dois dias
+consecutivos da mesma estação causadas por inúmeros fatores como a maior
+presença de nuvens ou de raios solares naqueles dias. Essa componente
+também pode ser denominada de \emph{erro aleatório} ou \emph{ruído
+branco}.
+
+Vários desses comportamentos podem ser observados nas séries de Figura
+1, como a tendência linear crescente do consumo de gás para geração de
+energia, as sazonalidades anais da venda de anti-histamínicos etc.
+
+Em geral, a tendência inclui uma outra componente denominada
+\textbf{ciclo}, mas que por simplicidade denominamos unicamente de
+tendência. Ciclos e mudanças sazonais são comportamentos bem diferentes
+nas séries temporais. A sazonalidade é um comportamento recorrente que
+se repete a intervalos fixos, regulares (a maior temperatura em certas
+estações do ano, o maior número de visitas em um site de entretenimento
+aos finais de semana). Já os ciclos são comportamentos recorrentes mas
+que ocorrem a intervalos não regulares. Vulcões e terremotos, por
+exemplo, têm um comportamento recorrente, mas não sabemos quando irão
+ocorrer, e uma série que represente as temperaturas ou o tremor em torno
+da cratera do Vulcão Eyjafjallajökull apresentará comportamentos
+repetitivos, mas que não são sazonais. O mesmo ocorre com os ciclos
+econômicos que alternam recessão e crescimento, e não sabemos quando irá
+ocorrer a próxima crise ou o estouro de uma \emph{bolha} do mercado. Nas
+séries de Figura 1, por exemplo, podemos observar alguns
+\textquotesingle ciclos\textquotesingle{} de séries financeiras (GDP e
+SP500) e das ondas de variantes da pandemia de COVID.
+
+\hypertarget{22-suxe9ries-temporais-em-python}{%
+\subsection{\texorpdfstring{\textbf{2.2. Séries temporais em
+Python}}{2.2. Séries temporais em Python}}\label{22-suxe9ries-temporais-em-python}}
+
+Aquisição dos dados de uma série temporal pode ser feita na forma de
+dados tabulares. Em \texttt{Python}, o \texttt{Pandas} fornece suporte a
+vários tipos de formato de arquivos como \texttt{.csv},\texttt{.xlsx},
+\texttt{.json}, \texttt{.html}, \texttt{.hdf5} e \texttt{.sql} para a
+criação de um \texttt{DataFrame}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# basic imports}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\OperatorTok{\%}\NormalTok{matplotlib inline}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/capea{-}consulta{-}cafe.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Data  vista R$  vista US$
+0  01/2014    288.98     119.88
+1  02/2014    366.32     153.96
+2  03/2014    437.24     187.79
+3  04/2014    449.45     201.45
+4  05/2014    429.28     193.22
+\end{verbatim}
+
+O \texttt{Pandas} é uma biblioteca para manipulação de dados tabulares e
+oferece várias funcionalidades para a seleção e transformação dos dados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df[ df[}\StringTok{\textquotesingle{}vista R$\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{1400}\NormalTok{ ][ [}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}vista R$\textquotesingle{}}\NormalTok{] ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       Data  vista R$
+95  12/2021   1452.15
+96  01/2022   1482.59
+97  02/2022   1485.35
+\end{verbatim}
+
+Um caso particularmente importante quando se trata de séries temporais
+trata-se da manipulação de datas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df.dtypes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Data          object
+vista R$     float64
+vista US$    float64
+dtype: object
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# seleção errônea dos dados com o atributo Data no formato de caracteres (object)}
+\NormalTok{df[ df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \StringTok{\textquotesingle{}10/2023\textquotesingle{}}\NormalTok{ ].head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+       Data  vista R$  vista US$
+10  11/2014    460.96     180.61
+11  12/2014    455.20     172.39
+22  11/2015    469.39     124.29
+23  12/2015    479.32     123.94
+34  11/2016    556.74     166.83
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# seleção correta dos dados com o atributo Data no formato de datetime}
+\NormalTok{df.Data }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df.Data)}
+\NormalTok{df[ df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \StringTok{\textquotesingle{}10/2023\textquotesingle{}}\NormalTok{ ].head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          Data  vista R$  vista US$
+118 2023-11-01    888.00     181.31
+119 2023-12-01    974.46     198.90
+120 2024-01-01   1003.74     204.34
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df.Data }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df.Data)}
+\NormalTok{df[ df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{].dt.year }\OperatorTok{\textgreater{}} \DecValTok{2023}\NormalTok{ ].head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          Data  vista R$  vista US$
+120 2024-01-01   1003.74     204.34
+\end{verbatim}
+
+\hypertarget{211-time-index}{%
+\subsubsection{2.1.1. Time index}\label{211-time-index}}
+
+Em \texttt{Python}, muitas funções úteis para a manipulação de séries
+temporais como resample, gráficos e uso de outros pacotes, requerem que
+o atributo de tempo da série temporal esteja representado no índice dos
+dados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df.index }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df.Data)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.drop(columns}\OperatorTok{=}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            vista R$  vista US$
+Data                           
+2014-01-01    288.98     119.88
+2014-02-01    366.32     153.96
+2014-03-01    437.24     187.79
+2014-04-01    449.45     201.45
+2014-05-01    429.28     193.22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# resample dos dados por ano}
+\NormalTok{df\_year }\OperatorTok{=}\NormalTok{ df.resample(}\StringTok{\textquotesingle{}Y\textquotesingle{}}\NormalTok{).mean()}
+\NormalTok{df\_year.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              vista R$   vista US$
+Data                              
+2014-12-31  418.572500  177.984167
+2015-12-31  451.494167  137.497500
+2016-12-31  494.522500  142.853333
+2017-12-31  465.690833  146.050833
+2018-12-31  435.646667  120.087500
+\end{verbatim}
+
+\hypertarget{212-gruxe1ficos}{%
+\subsubsection{2.1.2. Gráficos}\label{212-gruxe1ficos}}
+
+Gráficos de séries de dados são fundamentais para explorar e entender o
+comportamento dos dados e podem ser obtidos com bibliotecas como
+\texttt{matplotlib} ou \texttt{seaborn}. Um índice do tipo
+\texttt{datetime} permite que identificar os dados como uma série
+temporal e formatar a escala de tempo dos gráficos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.plot(df,label}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}vista R$\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}vista US$\textquotesingle{}}\NormalTok{])}
+
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Preços Saca do Café (Capea)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.legend()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/9c17b081a03b0e8c9d3fb9264b99f7b36d2aa72d.png}
+
+\hypertarget{213-decompondo-uma-suxe9rie-temporal}{%
+\subsubsection{2.1.3. Decompondo uma série
+temporal}\label{213-decompondo-uma-suxe9rie-temporal}}
+
+O principal pacote para modelos estatísticos de séries de dados em
+\texttt{Python} é o \texttt{statsmodel}, e a função
+\texttt{seasonal\_decompose()} permite decompor uma série em suas
+componentes de tendência, sazonalidade e resíduos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ statsmodels.tsa.seasonal }\ImportTok{import}\NormalTok{ seasonal\_decompose}
+
+\NormalTok{result }\OperatorTok{=}\NormalTok{ seasonal\_decompose(df[}\StringTok{\textquotesingle{}vista US$\textquotesingle{}}\NormalTok{], model}\OperatorTok{=}\StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{, extrapolate\_trend}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{fig }\OperatorTok{=}\NormalTok{ result.plot()}
+\NormalTok{fig.set\_size\_inches((}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{))}
+\NormalTok{plt.show()}
+
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/e7e2082ae3375c3b4de7c2a1f98fc99a2ad3daa8.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_compose }\OperatorTok{=}\NormalTok{ pd.DataFrame()}
+
+\NormalTok{df\_compose[}\StringTok{\textquotesingle{}trend\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ result.trend}
+\NormalTok{df\_compose[}\StringTok{\textquotesingle{}seasonal\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ result.seasonal}
+\NormalTok{df\_compose[}\StringTok{\textquotesingle{}resid\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ result.resid}
+
+\NormalTok{df\_compose[}\StringTok{\textquotesingle{}compose\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df\_compose.}\BuiltInTok{sum}\NormalTok{(axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{df\_compose.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                 trend  seasonal      resid  compose
+Data                                                
+2014-01-01  163.774583  0.142035 -44.036618   119.88
+2014-02-01  166.537917  4.960345 -17.538262   153.96
+2014-03-01  169.301250  2.486304  16.002446   187.79
+2014-04-01  172.064583  3.833470  25.551946   201.45
+2014-05-01  174.827917  0.168887  18.223196   193.22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.plot(df,label}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}vista R$\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}vista US$\textquotesingle{}}\NormalTok{])}
+\NormalTok{plt.plot(df\_compose[}\StringTok{\textquotesingle{}compose\textquotesingle{}}\NormalTok{]}\OperatorTok{+}\DecValTok{10}\NormalTok{,color}\OperatorTok{=}\StringTok{\textquotesingle{}k\textquotesingle{}}\NormalTok{,linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}trend + season + resid\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Preços Saca do Café (Capea)\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.legend()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/00524b2038665a6772cddc2c6ae91be89549a4ac.png}
+
+\hypertarget{23-suxe9ries-aditivas-e-multiplicativas}{%
+\subsection{2.3. Séries aditivas e
+multiplicativas}\label{23-suxe9ries-aditivas-e-multiplicativas}}
+
+A depender da natureza da série as componentes de tendência,
+sazonalidade e resíduo podem ser combinadas de forma aditiva ou
+multiplicativa, isto é:
+
+\[ Y_t = T_t + S_t + R_t \]
+
+para modelos aditivos, ou:
+
+\[ Y_t = T_t \times S_t \times R_t \]
+
+para modelos multiplicativos, sendo \(Y_t\) a série observada e
+\(T_t, S_t, R_t\) respectivamente as componentes de tendência,
+sazonalidade e resíduo.
+
+Idealmente você pode ter em mente que séries aditivas apresentam valores
+que, embora apresentem variações, têm uma variação limitada ao longo do
+tempo. Já séries multiplicativas, em geral, apresentam um comportamento
+explosivo, ou exponencial. De qualquer modo, lembre-se que os modelos
+são simplificações que buscam ser úteis, e uma série, por exemplo a
+atividade solar a cada mês, não tem qualquer obrigação de se comportar
+de forma aditiva ou multiplicativa, e nem sempre é muito simples
+identificar se uma série é aditiva ou multiplicativa.
+
+\hypertarget{24-estacionariedade}{%
+\subsection{2.4. Estacionariedade}\label{24-estacionariedade}}
+
+Decompor uma série já traz informações bastante úteis, como a tendência
+de seus valores futuros, padrões sazonais e seu grau de incerteza. Mas
+na maior parte dos casos estamos interessados em fazer previsões mais
+assertivas dos valores futuros.
+
+Para isso, a maior parte dos modelos assume que a série que se deseja
+prever é uma série \emph{estacionária}. Uma série estacionária, é uma
+série em que as estatísticas dos dados, isto é, média, variância e
+covariância \emph{não mudam ao longo do tempo}. A \emph{estacionariedade
+no sentido amplo} significaria a ausência completa de tendência e
+sazonalidade da série. Mas, em geral, é suficiente e mais comum a
+\emph{estacionariedade no sentido restrito}, podendo haver mudanças das
+estatísticas em algum momento (como as sazonalidades) mas não \emph{ao
+longo do tempo}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{no\_stacionary\_avg }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/no\_stacionary\_avg.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{no\_stacionary\_var }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/no\_stacionary\_var.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{stacionary }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/stacionary.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown \textasciigrave{}PLOT\textasciigrave{}}
+\KeywordTok{def}\NormalTok{ PLOT(df,ADF\_result):}
+
+\NormalTok{  fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{,}\FloatTok{3.5}\NormalTok{))}
+\NormalTok{  ax[}\DecValTok{0}\NormalTok{].plot(df,label}\OperatorTok{=}\StringTok{\textquotesingle{}Série\textquotesingle{}}\NormalTok{,alpha}\OperatorTok{=}\FloatTok{0.5}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+  \CommentTok{\# plt.setp(ax[0].get\_xticklabels(), fontsize=9)}
+\NormalTok{  ax[}\DecValTok{0}\NormalTok{].tick\_params(axis}\OperatorTok{=}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{, labelsize}\OperatorTok{=}\DecValTok{9}\NormalTok{)}
+\NormalTok{  ax[}\DecValTok{0}\NormalTok{].plot(df.rolling(ADF\_result[}\DecValTok{2}\NormalTok{]).mean(),label}\OperatorTok{=}\StringTok{\textquotesingle{}Média Móvel (\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(ADF\_result[}\DecValTok{2}\NormalTok{]) }\OperatorTok{+} \StringTok{\textquotesingle{})\textquotesingle{}}\NormalTok{,c}\OperatorTok{=}\StringTok{\textquotesingle{}k\textquotesingle{}}\NormalTok{)}
+
+  \ControlFlowTok{if}\NormalTok{ ADF\_result[}\DecValTok{1}\NormalTok{] }\OperatorTok{\textless{}} \FloatTok{0.05}\NormalTok{:}
+\NormalTok{    ax[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Série ADF estacionária, p{-}value = \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(ADF\_result[}\DecValTok{1}\NormalTok{],}\DecValTok{4}\NormalTok{)))}
+  \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{    ax[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Série não ADF estacionária, p{-}value = \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(ADF\_result[}\DecValTok{1}\NormalTok{],}\DecValTok{4}\NormalTok{)))}
+
+\NormalTok{  ax[}\DecValTok{0}\NormalTok{].legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  grouped\_means }\OperatorTok{=}\NormalTok{ [df[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{][i:i}\OperatorTok{+}\NormalTok{ADF\_result[}\DecValTok{2}\NormalTok{]].mean() }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\BuiltInTok{len}\NormalTok{(df), ADF\_result[}\DecValTok{2}\NormalTok{])]}
+\NormalTok{  grouped\_var }\OperatorTok{=}\NormalTok{ [df[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{][i:i}\OperatorTok{+}\NormalTok{ADF\_result[}\DecValTok{2}\NormalTok{]].var() }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\BuiltInTok{len}\NormalTok{(df), ADF\_result[}\DecValTok{2}\NormalTok{])]}
+
+\NormalTok{  ax[}\DecValTok{1}\NormalTok{].plot(}\BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(grouped\_means)), grouped\_means, label}\OperatorTok{=}\StringTok{\textquotesingle{}Médias\textquotesingle{}}\NormalTok{,alpha}\OperatorTok{=}\FloatTok{0.8}\NormalTok{)}
+\NormalTok{  ax[}\DecValTok{1}\NormalTok{].plot(}\BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(grouped\_var)), grouped\_var, label}\OperatorTok{=}\StringTok{\textquotesingle{}Variância\textquotesingle{}}\NormalTok{,alpha}\OperatorTok{=}\FloatTok{0.8}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  ax[}\DecValTok{1}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Médias e variância ao longo do tempo\textquotesingle{}}\NormalTok{)}
+\NormalTok{  ax[}\DecValTok{1}\NormalTok{].legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  plt.tight\_layout()}
+\NormalTok{  plt.show()}
+
+  \ControlFlowTok{return}
+
+
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ statsmodels.tsa.stattools }\ImportTok{import}\NormalTok{ adfuller, kpss}
+
+\KeywordTok{def}\NormalTok{ ADF(df,verbose}\OperatorTok{=}\VariableTok{False}\NormalTok{):}
+\NormalTok{  result }\OperatorTok{=}\NormalTok{ adfuller(df)}
+  \ControlFlowTok{if}\NormalTok{ verbose:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}ADF Statistic: }\SpecialCharTok{\%f}\StringTok{\textquotesingle{}} \OperatorTok{\%}\NormalTok{ result[}\DecValTok{0}\NormalTok{])}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}p{-}value: }\SpecialCharTok{\%f}\StringTok{\textquotesingle{}} \OperatorTok{\%}\NormalTok{ result[}\DecValTok{1}\NormalTok{])}
+
+    \ControlFlowTok{if}\NormalTok{ result[}\DecValTok{1}\NormalTok{] }\OperatorTok{\textless{}} \FloatTok{0.05}\NormalTok{:}
+      \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Série é ADF estacionária\textquotesingle{}}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+      \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Série é não ADF estacionária\textquotesingle{}}\NormalTok{)}
+
+  \ControlFlowTok{return}\NormalTok{ result}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PLOT(no\_stacionary\_avg, ADF(no\_stacionary\_avg))}
+\NormalTok{PLOT(no\_stacionary\_var, ADF(no\_stacionary\_var))}
+\NormalTok{PLOT(stacionary, ADF(stacionary))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/32b1e561400969935cc062c5b3067dd38408b5fc.png}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/aad863d946100d1650060e7be455ae5e531d3cc8.png}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/d6fbb0d073f52efb6d14462182668bde62667397.png}
+
+Há vários testes estatísticos para verificar a estacionariedade de uma
+série temporal, mas os testes mais comuns são o teste \textbf{Augmented
+Dickey Fuller (``ADF'')} e o teste
+\textbf{Kwiatkowski-Phillips-Schmidt-Shin (``KPSS'')} e que,
+basicamente, verificam a presença de tendência na série e entendimento
+do domínio e a análise exploratória dos dados são essenciais para uma
+interpretação adequada desses testes. Os gráficos anteriores ilustram
+diferentes casos de estacionariedade e não estacionariedade com os
+respectivos p-values do teste ADF.
+
+Tanto no ADF como no KPSS teste, a hipótese nula (estacionariedade) é
+rejeitada para \(\text{p-value} > 0.05\). Assim, \textbf{para
+\(\text{p-value} < 0.05\), diremos que a série é estacionária}.
+
+\hypertarget{25-sazonalidade}{%
+\subsection{2.5. Sazonalidade}\label{25-sazonalidade}}
+
+A inspeção visual das séries desempenha um papel fundamental na
+identificação de sazonalidades, como também da estacionariedade apesar
+dos testes disponíveis. Gráficos de agrupamentos com os valores médios
+por dia, mês etc. são bastantes empregados e constituem a base de muitos
+modelos de sazonalidade.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Criando uma série de periodicidade anual}
+\NormalTok{date\_range }\OperatorTok{=}\NormalTok{ pd.date\_range(start}\OperatorTok{=}\StringTok{\textquotesingle{}2021{-}01{-}01\textquotesingle{}}\NormalTok{, periods}\OperatorTok{=}\DecValTok{4}\OperatorTok{*}\DecValTok{12}\NormalTok{, freq}\OperatorTok{=}\StringTok{\textquotesingle{}M\textquotesingle{}}\NormalTok{)}
+\NormalTok{seasonal\_pattern }\OperatorTok{=}\NormalTok{ np.sin(np.linspace(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\OperatorTok{*}\NormalTok{np.pi, }\DecValTok{12}\NormalTok{)) }\CommentTok{\# Repetindo o padrão mensal (de janeiro a dezembro) por 3 anos}
+\NormalTok{values }\OperatorTok{=}\NormalTok{ np.tile(seasonal\_pattern, }\DecValTok{4}\NormalTok{) }\CommentTok{\# Repetindo o padrão sazonal para os 4 anos}
+\NormalTok{values }\OperatorTok{=} \DecValTok{10}\OperatorTok{*}\NormalTok{values }\OperatorTok{+} \DecValTok{5}\OperatorTok{*}\NormalTok{np.random.sample(}\BuiltInTok{len}\NormalTok{(values))}
+
+\NormalTok{time\_series }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}Value\textquotesingle{}}\NormalTok{: values\},index}\OperatorTok{=}\NormalTok{date\_range)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# agregando os valores}
+\NormalTok{group\_month }\OperatorTok{=}\NormalTok{ pd.DataFrame(time\_series.groupby([time\_series.index.year,time\_series.index.month]).mean()).reset\_index()}
+\NormalTok{group\_month.columns }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}month\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+
+\ControlFlowTok{for}\NormalTok{ y }\KeywordTok{in}\NormalTok{ group\_month.year.unique():}
+\NormalTok{ ax[}\DecValTok{0}\NormalTok{].plot(group\_month[ group\_month.year }\OperatorTok{==}\NormalTok{ y ].month,group\_month[ group\_month.year }\OperatorTok{==}\NormalTok{ y ][}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{],label}\OperatorTok{=}\NormalTok{y)}
+
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].plot(time\_series.index.month.unique(),time\_series.groupby([time\_series.index.month]).mean(),}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}média mês\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Valores anuais da série\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{0}\NormalTok{].legend(title}\OperatorTok{=}\StringTok{\textquotesingle{}Year\textquotesingle{}}\NormalTok{,loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper right\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].plot(time\_series,label}\OperatorTok{=}\StringTok{\textquotesingle{}Série original\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].plot(time\_series.index,np.tile(time\_series.groupby([time\_series.index.month]).mean().values.flatten(),}\DecValTok{4}\NormalTok{),}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}valores médios/mês\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].set\_title(}\StringTok{\textquotesingle{}Série e padrão sazonal\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax[}\DecValTok{1}\NormalTok{].legend(title}\OperatorTok{=}\StringTok{\textquotesingle{}Série\textquotesingle{}}\NormalTok{,loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper right\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/6ed6080ad14dca292e527be66d534d3105d5aa14.png}
+
+\hypertarget{251-peridiograma}{%
+\subsubsection{2.5.1. Peridiograma}\label{251-peridiograma}}
+
+Apesar da importância e predominância da inspeção visual, o
+\textbf{peridiograma} pode ser uma ferramenta bastante útil e mais
+adiante introduziremos os gráficos autocorrelação que também nos ajudam
+a identificar sazonalidades.
+
+O peridiograma apresenta a distribuição das frequências em um sinal ao
+longo do tempo e as frequências mais presentes podem ser empregadas para
+identificar as sazonalidades presentes na série.
+
+\[ P_i = \frac{\text{Total de Períodos}}{freq_i} \]
+
+onde, \(P_i\) é a periodicidade da frequência \(freq_i\). Pode haver
+inúmeras frequências, mas podemos nos limitar as mais predominantes (1,
+2 ou 3 mais presentes).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ scipy }\ImportTok{import}\NormalTok{ signal}
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+
+\NormalTok{frequencies, spectrum }\OperatorTok{=}\NormalTok{ signal.periodogram(stacionary[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{],fs}\OperatorTok{=}\BuiltInTok{len}\NormalTok{(stacionary))}
+
+\NormalTok{ax.step(frequencies, spectrum)}
+
+\NormalTok{ax.set\_title(}\StringTok{\textquotesingle{}Periodograma {-} Frequência $f$\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax.set\_xlabel(}\StringTok{\textquotesingle{}frequency [Hz]\textquotesingle{}}\NormalTok{)}
+\NormalTok{ax.set\_ylabel(}\StringTok{\textquotesingle{}PSD [V**2/Hz]\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{dfft }\OperatorTok{=}\NormalTok{ pd.DataFrame()}
+\NormalTok{dfft[}\StringTok{\textquotesingle{}frequencies\textquotesingle{}}\NormalTok{], dfft[}\StringTok{\textquotesingle{}spectrum\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ frequencies, spectrum}
+\NormalTok{dfft[}\StringTok{\textquotesingle{}periods\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(stacionary) }\OperatorTok{/}\NormalTok{ dfft[}\StringTok{\textquotesingle{}frequencies\textquotesingle{}}\NormalTok{]}
+\NormalTok{display(dfft.sort\_values(}\StringTok{\textquotesingle{}spectrum\textquotesingle{}}\NormalTok{,ascending}\OperatorTok{=}\VariableTok{False}\NormalTok{).head())}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     frequencies  spectrum    periods
+24          24.0  2.960242  30.416667
+104        104.0  1.515986   7.019231
+25          25.0  0.723724  29.200000
+105        105.0  0.305413   6.952381
+23          23.0  0.188924  31.739130
+\end{verbatim}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/1df27ce425faf490194447004865f795514e8ea9.png}
+
+\hypertarget{26-diferenciauxe7uxe3o-e-log-eliminando-a-tenduxeancia-e-sazonalidade}{%
+\subsection{2.6. Diferenciação e Log: eliminando a tendência e
+sazonalidade}\label{26-diferenciauxe7uxe3o-e-log-eliminando-a-tenduxeancia-e-sazonalidade}}
+
+Um dos métodos mais simples para se reduzir a tendência de uma série
+temporal é construir uma nova série por \textbf{diferenciação}. Nesta
+nova série o valor no intervalo de tempo atual é calculado como a
+diferença entre o valor original e o valor no intervalo de tempo
+anterior.
+
+\[ \Delta^1 y_t = y_t - y_{t-1} \]\\
+\[ \Delta^d y_t = y_t - y_{t-d} \]
+
+A diferenciação acima é de ordem 1 e diferenciações maiores podem ser
+aplicadas para, por exemplo, eliminar uma tendência polinominal. Para
+tendências exponenciais pode ser necessário aplicar, do mesmo modo, a
+transformação \emph{logarítimica} da série (tornando-a linear) antes de
+se aplicar a diferenciação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PLOT(no\_stacionary\_avg.diff().dropna(), ADF(no\_stacionary\_avg.diff().dropna()))}
+\NormalTok{PLOT(no\_stacionary\_avg.diff().dropna(), ADF(no\_stacionary\_avg.diff().dropna()))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/dd2f022326654c1b009f0af9928b5c0aa5d4860f.png}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/dd2f022326654c1b009f0af9928b5c0aa5d4860f.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{no\_stacionary\_varlog }\OperatorTok{=}\NormalTok{ no\_stacionary\_var.copy() }\OperatorTok{+} \DecValTok{100}
+\NormalTok{no\_stacionary\_varlog[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ np.log(no\_stacionary\_varlog[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PLOT(no\_stacionary\_varlog.dropna(), ADF(no\_stacionary\_varlog.diff().dropna()))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/691021375bbc1d8d76a1e041914ebe9d76455904.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown}
+\CommentTok{\# nota: para reconstrução da série original a partir da série diferenciada com cumsum()}
+\NormalTok{no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ no\_stacionary\_avg[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{]}
+\NormalTok{no\_stacionary\_avg[}\StringTok{\textquotesingle{}y.diff()\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{].diff()}
+
+\NormalTok{no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\_cumsum()\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{].diff()}
+\NormalTok{no\_stacionary\_avg.at[}\StringTok{\textquotesingle{}2022{-}01{-}01\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}y\_cumsum()\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ no\_stacionary\_avg.iloc[}\DecValTok{0}\NormalTok{][}\StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{]}
+\NormalTok{no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\_cumsum()\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ no\_stacionary\_avg[}\StringTok{\textquotesingle{}y\_cumsum()\textquotesingle{}}\NormalTok{].cumsum()}
+
+\CommentTok{\# no\_stacionary\_avg.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{27-resuxedduos}{%
+\subsection{2.7. Resíduos}\label{27-resuxedduos}}
+
+Os pressupostos do modelo ARIMA incluem a estacionariedade da série
+temporal (ou a estacionariedade por diferenciação), mas também a
+independência dos resíduos e a normalidade dos resíduos.
+
+O termo resíduo é ser empregado para designar a diferença entre os
+valores reais e o ajuste obtido da série por algum modelo e consiste em
+uma componente \emph{não explicada} série.
+
+Essa diferença pode ser medida de diversas formas, mas ao final todas
+refletem as diferenças da série real \(Y_t\) e os valores estimados
+\(\hat Y_t\) que queremos minimizar. Por serem muito empregadas algumas
+dessas medidas recebem nomes especiais:
+
+\begin{itemize}
+\item
+  Erro Médio Absoluto (\emph{Mean Absolute Error}),
+  \(MAE = \frac{1}{n} \sum | Y_t - \hat Y_t |\)
+\item
+  Erro Médio Quadrático (\emph{Mean Square Error}),
+  \(MSE = \frac{1}{n} \sum ( Y_t - \hat Y_t )^2\)
+\item
+  Raiz do Erro Médio Quadrático (\emph{Root Mean Square Error}), \$RMSE
+  = \textbackslash sqrt\{ \textbackslash frac\{1\}\{n\}
+  \textbackslash sum ( Y\_t - \textbackslash hat Y\_t )\^{}2 \} \$
+\item
+  Erro Percentual Absoluto Médio (\emph{Mean Absolute Percentage
+  Error}), \(MAPE = \frac{1}{n} \sum | \frac{Y_t - \hat Y_t}{Y_t} |\)
+\end{itemize}
+
+Todas medidas que podem ser fácil e diretamente calculadas ou pode-se
+empregar algum pacote.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ statsmodels.tools.eval\_measures }\ImportTok{as}\NormalTok{ eval\_measures}
+
+\KeywordTok{def}\NormalTok{ error\_measures(y, y\_pred):}
+
+\NormalTok{    mae }\OperatorTok{=}\NormalTok{ np.mean(np.}\BuiltInTok{abs}\NormalTok{(y\_pred }\OperatorTok{{-}}\NormalTok{ y))                  }\CommentTok{\# MAE}
+\NormalTok{    mse }\OperatorTok{=}\NormalTok{ np.mean((y\_pred }\OperatorTok{{-}}\NormalTok{ y)}\OperatorTok{**}\DecValTok{2}\NormalTok{)                     }\CommentTok{\# MSE}
+\NormalTok{    rmse }\OperatorTok{=}\NormalTok{ eval\_measures.rmse(y, y\_pred, axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)       }\CommentTok{\# RMSE from statsmodels}
+    \CommentTok{\# rmse = np.mean((y\_pred {-} y)**2)**.5              \# RMSE}
+\NormalTok{    mape }\OperatorTok{=}\NormalTok{ np.mean(np.}\BuiltInTok{abs}\NormalTok{(y\_pred }\OperatorTok{{-}}\NormalTok{ y)}\OperatorTok{/}\NormalTok{np.}\BuiltInTok{abs}\NormalTok{(y))       }\CommentTok{\# MAPE}
+
+\NormalTok{    metrics }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}MSE\textquotesingle{}}\NormalTok{:mse, }\StringTok{\textquotesingle{}MAE\textquotesingle{}}\NormalTok{: mae, }\StringTok{\textquotesingle{}RMSE\textquotesingle{}}\NormalTok{:rmse, }\StringTok{\textquotesingle{}MAPE\textquotesingle{}}\NormalTok{:mape\}}
+
+    \ControlFlowTok{for}\NormalTok{ key, value }\KeywordTok{in}\NormalTok{ metrics.items():}
+      \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{key}\SpecialCharTok{\}}\SpecialStringTok{: }\CharTok{\textbackslash{}t}\SpecialStringTok{ }\SpecialCharTok{\{}\NormalTok{value}\SpecialCharTok{:.4f\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+
+    \ControlFlowTok{return}\NormalTok{ metrics}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{result }\OperatorTok{=}\NormalTok{ seasonal\_decompose(stacionary, model}\OperatorTok{=}\StringTok{\textquotesingle{}additive\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{non\_NA }\OperatorTok{=}\NormalTok{ pd.merge(stacionary, result.trend, how}\OperatorTok{=}\StringTok{\textquotesingle{}inner\textquotesingle{}}\NormalTok{, left\_index}\OperatorTok{=}\VariableTok{True}\NormalTok{, right\_index}\OperatorTok{=}\VariableTok{True}\NormalTok{).dropna().index }\CommentTok{\# exclui valores nulos das previsões}
+
+\NormalTok{y }\OperatorTok{=}\NormalTok{ stacionary.loc[non\_NA][}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{]}
+\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ result.trend.loc[non\_NA] }\OperatorTok{+}\NormalTok{ result.seasonal.loc[non\_NA]}
+
+\NormalTok{\_ }\OperatorTok{=}\NormalTok{ error\_measures(y,y\_pred)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+MSE: 	 3.6922
+MAE: 	 1.5335
+RMSE: 	 1.9215
+MAPE: 	 0.0628
+\end{verbatim}
+
+Mas além de buscar minimizar o erro, ou resíduos, queremos que seus
+valores sejam independentes, no sentido de não estarem correlacionados,
+e que apresentem uma distribuição normal.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sns.kdeplot(y }\OperatorTok{{-}}\NormalTok{ y\_pred)}
+
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Distribuição dos resíduos\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/d8b8005e18e2dc07aab73d237c2523cc67125c7d.png}
+
+A normalidade dos resíduos pode ser verificada através de um gráfico de
+distribuição ou do tipo \emph{qqplot}, o que é mais comum que o uso de
+testes de hipótese de normalidade. Para independência dos resíduos
+pode-se empregar um gráfico de autocorrelação dos resíduos. Veremos esse
+gráfico mais adiante como também uma função \texttt{plot\_diagnostics()}
+do \texttt{statsmodels} que agrega todos esses gráficos para uma melhor
+análise dos resíduos.
+
+\hypertarget{28-exercuxedcios-e-referuxeancias}{%
+\subsection{2.8. Exercícios e
+referências}\label{28-exercuxedcios-e-referuxeancias}}
+
+Além do livro base deste curso há um grande número de livros texto que
+tratam desde os conceitos de séries temporais. Montgomery et al. (2015)
+e Chatfield (1996) são livros texto clássicos e um ótimo texto nacional
+é Morettin e Toloi (2006). Eles tratam dos conceitos de séries temporais
+e de modelos estatísticos, mas não trazem código ou implementações.
+Hyndman e Athanasopoulos (2018) é um livro texto bastante tradicional de
+séries temporais e que também traz exemplos de implementação, embora
+empregue a linguagem R, bastante empregada no tratamento de séries de
+dados. O texto também tem uma versão disponível online. Box et. al.
+(2015) é um clássico e uma referência obrigatória para quem quer se
+aprofundar formalmente em modelos estatísticos para séries temporais.
+
+Para conceitos introdutórios de Python, \texttt{Pandas} e aprendizado de
+máquina clássico, Vanderplas (2016) é um texto muito útil, possui um
+seção dedicada a séries temporais e, assim como o material deste curso e
+nosso livro texto, está disponível online em formato de notebooks
+Python. Também disponíveis online, Oliveira (2022) é uma introdução útil
+para visualização de dados em Python, incluindo séries de dados, e Kong
+et al. (2020) apresenta a implementação de vários métodos numéricos em
+Python.
+
+Os sites de documentação das bibliotecas Pandas (2024) e statsmodels
+(2024) são úteis para a melhor compreensão de muitas das funções
+empregadas nesta e nas seções seguintes.
+
+Por último, para complementar esta seção, De Gooijer e Hyndman (2006) é
+um artigo curto que revisa, sem fórmulas ou implementações, as ideias do
+principais modelos de séries temporais clássicos e como eles evoluíram
+antes da introdução dos modelos de aprendizado de máquina.
+
+Os exercícios dessa seção e suas soluções podem ser acessadas no
+material complementar do curso
+\href{https://github.com/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/exerc_parte1_introd.ipynb}{exerc\_parte1\_introd}.
+
+\hypertarget{3-modelos-autoregressivos}{%
+\section{\texorpdfstring{\textbf{3. Modelos
+autoregressivos}}{3. Modelos autoregressivos}}\label{3-modelos-autoregressivos}}
+
+A ideia principal dos modelos autoregressivos, incluindo o ARIMA,
+consiste em modelar a dependência serial dos dados, uma vez que, na
+maioria das séries, observa-se que os valores recentes estão
+correlacionados com seus valores passados e que a força dessa
+dependência diminui quando considerados valores mais distantes no tempo.
+Assim, é razoável pensar que o valor de amanhã das vendas de uma safra
+ou do volume de chuvas está correlacionado com os mesmos valores
+observados ontem, ou no dia anterior, e que essa correlação diminui
+conforme nos afastamos no tempo.
+
+\hypertarget{31-modelos-de-regressuxe3o-e-autoregressuxe3o}{%
+\subsection{3.1. Modelos de regressão e
+autoregressão}\label{31-modelos-de-regressuxe3o-e-autoregressuxe3o}}
+
+Modelos de regressão se baseiam em variáveis independentes para prever a
+variável dependente, os modelos de autoregressão usam os próprios
+valores passados da variável dependente para fazer previsões futuras.
+Para séries temporais, em geral, faz mais sentido empregarmos a forma
+autoregressiva que empregar o tempo (que seria única variável
+independente em uma única série de dados). Entretanto, em ambos os casos
+o cálculo dos coeficientes pode ser feito do mesmo modo (em geral um
+método de mínimos quadrados).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{co2 }\OperatorTok{=}\NormalTok{ pd.read\_csv(path }\OperatorTok{+} \StringTok{\textquotesingle{}co2.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\NormalTok{co2[}\StringTok{\textquotesingle{}CO2\_t{-}1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ co2.CO2.shift()}
+\NormalTok{co2[}\StringTok{\textquotesingle{}CO2\_t{-}2\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ co2.CO2.shift().shift()}
+\NormalTok{co2 }\OperatorTok{=}\NormalTok{ co2.dropna()}
+\NormalTok{co2.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            time     CO2  CO2_t-1  CO2_t-2
+Date                                      
+1981-07-01     2  340.32   342.08   342.74
+1981-08-01     3  338.26   340.32   342.08
+1981-09-01     4  336.52   338.26   340.32
+1981-10-01     5  336.68   336.52   338.26
+1981-11-01     6  338.19   336.68   336.52
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ statsmodels.api }\ImportTok{as}\NormalTok{ sm}
+
+\CommentTok{\# regressão}
+\NormalTok{X }\OperatorTok{=}\NormalTok{ co2[[}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{]]}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ co2[[}\StringTok{\textquotesingle{}CO2\textquotesingle{}}\NormalTok{]]}
+
+\NormalTok{X }\OperatorTok{=}\NormalTok{ sm.add\_constant(X)}
+\NormalTok{y\_regression }\OperatorTok{=}\NormalTok{ sm.OLS(y, X).fit().predict()}
+
+\CommentTok{\# auto regressão}
+\NormalTok{X }\OperatorTok{=}\NormalTok{ co2[[}\StringTok{\textquotesingle{}CO2\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}CO2\_t{-}2\textquotesingle{}}\NormalTok{]]}
+
+\NormalTok{X }\OperatorTok{=}\NormalTok{ sm.add\_constant(X)}
+\NormalTok{y\_autoregression }\OperatorTok{=}\NormalTok{ sm.OLS(y, X).fit().predict()}
+
+\CommentTok{\# show results}
+\NormalTok{plt.plot(co2.CO2,label}\OperatorTok{=}\StringTok{\textquotesingle{}série original\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(co2.index,y\_autoregression, }\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, label}\OperatorTok{=}\StringTok{\textquotesingle{}linear autoregression $y\_t = a\_0 + a\_1 y\_\{t{-}1\} + a\_2 y\_\{t{-}2\}$\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(co2.index,y\_regression, }\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, label}\OperatorTok{=}\StringTok{\textquotesingle{}linear regression $y\_t = a\_0 + a\_1 t$\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}CO2 Emissions\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/883d1c62a342cfc4c368990128f245aa9bbf80e6.png}
+
+\hypertarget{32-modelo-arima}{%
+\subsection{3.2. Modelo ARIMA}\label{32-modelo-arima}}
+
+Existem vários tipos de modelos, empregando diferentes princípios, para
+análise e previsões de séries temporais. O modelo ARIMA
+(Autorregressivos Integrados de Médias Móveis), é um modelo de análise
+estatística amplamente utilizado para modelar séries temporais
+estacionárias e não estacionárias, e constituir a base de modelos mais
+complexos (ARIMAX, VARIMAX, SARIMAX, ARCH, GARCH etc. envolvendo
+variáveis exógenas, sazonalidades e volatilidade de séries temporais). O
+ARIMA é, portanto, um modelo fundamental.
+
+O modelo ARIMA consiste nos seguintes componentes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(AR (p)\) : Termo autoregressivo que incorpora a dependência entre
+  uma observação e uma série de observações defasadas até a ordem \(p\),
+  o que pode ser escrito do seguinte modo:
+\end{itemize}
+
+\[Y_t=\phi_0 + \phi_1Y_{t-1}+ \phi_2Y_{t-2}+...+ \phi_pY_{t-p} + \epsilon_t,\]
+
+onde \(\epsilon_t\) é o erro do modelo.
+
+\begin{itemize}
+\tightlist
+\item
+  \(I (d)\): Termo integrado que envolve diferenciar na ordem \(d\) os
+  dados da série temporal para torná-los estacionários.
+\end{itemize}
+
+\[W_t={\Delta^d Y_t} = Y_t - Y_{t-d}\] e portanto,
+\[ Y_t =  W_t + Y_{t-d}\]
+
+\begin{itemize}
+\tightlist
+\item
+  \(MA (q)\): Termo de média móvel que leva em conta a dependência entre
+  uma observação e um erro residual de um modelo de média móvel de ordem
+  \(q\).
+\end{itemize}
+
+\[Y_t=\mu + e_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} +...+ \theta_q \epsilon_{t-q} ,\]
+
+onde \(\mu\) é a média da série.
+
+Tanto o modelo \(AR\) como o modelo \(MA\) são conceitualmente e podem
+ser calculados como uma regressão linear do valor atual da série,
+respectivamente sobre seus valores passados (\(AR\)) e os termos de erro
+com relação à média móvel (\(MA\)). Ao final o modelo ARIMA completo
+pode ser escrito como:
+
+\[W_t=\underbrace{\Delta^d Y_t}_{I(d)}\]
+
+\[{W_t} = \underbrace{\phi_0+ \phi_1 W_{t-1}+ \phi_2 W_{t-2}+...+\phi_p  W_{t-p}}_{AR(p)} +\underbrace{\epsilon_t + \theta_1 \epsilon_{t-1}+ \theta_2 \epsilon_{t-2}+...+ \theta_q \epsilon_{t-q}}_{MA(q)}, \]
+
+\[ Y_t =  W_t + Y_{t-d}\]
+
+Assim, o modelo ARIMA é a junção de modelos que podem também ser
+empregados de forma independente como segue.
+
+\textbackslash begin\{array\}\{c c c\} \textbackslash hdashline
+\textbackslash text\{Model\}\&\textbackslash text\{ARIMA(p,q,d)\}\&\textbackslash text\{Tipo
+de Série\}\textbackslash{} \textbackslash hdashline AR(p) \& ARIMA(p, 0,
+0) \& \textbackslash text\{estacionária\} \textbackslash{} MA(q) \&
+ARIMA(0, 0, q) \& \textbackslash text\{estacionária\} \textbackslash{}
+ARMA(p,q) \& ARIMA(p, 0, q) \& \textbackslash text\{estacionária\}
+\textbackslash{} ARIMA(p, d, q) \& ARIMA(p, d, q) \&
+\textbackslash text\{não estacionária\} \textbackslash{}
+\textbackslash hdashline \textbackslash end\{array\}
+
+E em todos os casos como vimos assume-se a independência e a normalidade
+dos resíduos da série.
+
+\hypertarget{321-exemplo-1}{%
+\subsubsection{3.2.1. Exemplo 1}\label{321-exemplo-1}}
+
+Considerando a série \(Y_t\) estacionária podemos considerar os
+seguintes modelos de ordem 1:
+
+\textbackslash begin\{array\}\{c c \} \textbackslash hdashline
+\textbackslash text\{Modelo\}\&\textbackslash text\{ARIMA(p,q,d)\}\textbackslash{}
+\textbackslash hdashline AR(1) \textbackslash space
+\textbackslash text\{ou\} \textbackslash space ARIMA(1,0,0) \&
+Y\_t=\textbackslash phi\_0 + \textbackslash phi\_1Y\_\{t-1\} +
+\textbackslash epsilon\_t \textbackslash{} I(1) \textbackslash space
+\textbackslash text\{ou\} \textbackslash space ARIMA(0,1,0) \& Y\_t=
+Y\_\{t-1\} + \textbackslash epsilon\_t \textbackslash{} MA(1)
+\textbackslash space \textbackslash text\{ou\} \textbackslash space
+ARIMA(0,0,1) \& Y\_t= \textbackslash epsilon\_t +
+\textbackslash theta\_1 \textbackslash epsilon\_\{t-1\} \textbackslash{}
+ARMA(1,1) \textbackslash space \textbackslash text\{ou\}
+\textbackslash space ARIMA(1,0,1) \& Y\_t=\textbackslash phi\_0 +
+\textbackslash phi\_1Y\_\{t-1\} + \textbackslash epsilon\_t +
+\textbackslash theta\_1 \textbackslash epsilon\_\{t-1\} \textbackslash{}
+\textbackslash hdashline \textbackslash end\{array\}
+
+\hypertarget{322-exemplo-2}{%
+\subsubsection{3.2.2. Exemplo 2}\label{322-exemplo-2}}
+
+Considerando a série \(Y_t\) estacionária para a diferenciação de ordem
+1, podemos construir a série estacionária:
+
+\[W_t = Y_t-Y_{t-1}\]
+
+e, então, o modelo:
+
+\textbackslash begin\{array\}\{c c \} \textbackslash hdashline
+\textbackslash text\{Modelo\}\&\textbackslash text\{ARIMA(p,q,d)\}\textbackslash{}
+\textbackslash hdashline ARIMA(1,1,1) \& W\_t=\textbackslash phi\_0 +
+\textbackslash phi\_1W\_\{t-1\} + \textbackslash epsilon\_t +
+\textbackslash theta\_1 \textbackslash epsilon\_\{t-1\} \textbackslash{}
+\textbackslash hdashline \textbackslash end\{array\}
+
+Em que é ajustado um modelo ARMA(1,1) à série diferenciada \(W_t\).
+
+\hypertarget{323-exemplo-3}{%
+\subsubsection{3.2.3. Exemplo 3}\label{323-exemplo-3}}
+
+Modelos de \emph{suavização}, uma outra técnica bastante empregada em
+séries temporais, também podem ser derivados de modelos ARIMA como o
+modelo básico de suavização (ARIMA(0,1,1)), o modelo de \emph{Holt
+Amortecido} (ARIMA(0,1,2)) e o método linear de Holt (ARIMA(0,2,2)). E o
+modelo ARIMA Sazonal, SARIMA(p,d,q)(P,D,Q), consiste em um modelo ARIMA
+em que a componente sazonal é também modelada do mesmo modo com os
+parâmetros P, D, Q.
+
+\hypertarget{33-autocorrelauxe7uxe3o-e-autocorrelauxe7uxe3o-parcial}{%
+\subsection{3.3. Autocorrelação e autocorrelação
+parcial}\label{33-autocorrelauxe7uxe3o-e-autocorrelauxe7uxe3o-parcial}}
+
+A correlação de duas variáveis \(x, y\) refere-se à sua dependência
+linear e é dada por:
+
+\[ \rho(x,y) = \frac{cov(x,y)}{\sqrt{var(x)var(x)}} \]
+
+Em séries temporais, nos referimos à \emph{autocorrelação} à correlação
+entre valores da mesma série para intervalos de tempo diferentes e, por
+exemplo a correlação do valor atual com o valor do instante anterior da
+série é dado por:
+
+\[ \rho(x_t,x_{t-1}) = \frac{cov(x_t,x_{t-1})}{\sqrt{var(x_t)var(x_{t-1})}} \]
+
+A função ACF (\emph{Autocorrelation Function}) fornece os valores de
+autocorrelação para diferentes defasagens de valores
+(\(x_{t-1}, x_{t-2},...\)) e fornece uma boa estimativa para os valores
+\(q\) do modelo AR. A função ACF considera todos os valores
+intermediários, isto é, a correlação de \(x_t\) e \(x_{t-k}\) inclui
+cadeia de dependência de todos os têrmos entre os dois valores. A função
+PACF (\emph{Partial Autocorrelation Function}) estima os valores de
+autocorrelação para diferentes defasagens de valores
+(\(x_{t-1}, x_{t-2},...\)) somente para o último elemento, excluindo as
+dependências anteriores. Ela fornece uma boa estimativa para os valores
+\(p\) do modelo AR.
+
+\textbackslash begin\{array\}\{c c c c\} \textbackslash hdashline
+\textbackslash text\{Função\} \& MA(q) \& AR(p) \& ARMA(p,q)
+\textbackslash{} \textbackslash hdashline ACF \&
+\textbackslash text\{Desprezível após \} q \&
+\textbackslash text\{Decaimento\}\^{}1 \&
+\textbackslash text\{Decaimento\}\^{}1 \textbackslash text\{após \} q
+\textbackslash{} PACF \& \textbackslash text\{Decaimento\}\^{}1 \&
+\textbackslash text\{Desprezível após \} p \&
+\textbackslash text\{Decaimento\}\^{}1 \textbackslash text\{após \} p
+\textbackslash{} \textbackslash hdashline \textbackslash end\{array\}
+
+\(^1\) \emph{Decaimento tipo exponencial ou sinusoide}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ statsmodels.graphics.tsaplots }\ImportTok{import}\NormalTok{ plot\_acf, plot\_pacf}
+
+\KeywordTok{def}\NormalTok{ plot\_ts\_acf\_pacf(ts,model\_name):}
+\NormalTok{  fig, (ax1, ax2, ax3) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{,figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\FloatTok{3.5}\NormalTok{))}
+
+\NormalTok{  ax1.plot(ts,linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}solid\textquotesingle{}}\NormalTok{,alpha}\OperatorTok{=}\DecValTok{1}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ax1.title.set\_text(}\StringTok{\textquotesingle{}Série \textquotesingle{}} \OperatorTok{+}\NormalTok{ model\_name)}
+\NormalTok{  plot\_acf(ts, ax}\OperatorTok{=}\NormalTok{ax2, title}\OperatorTok{=}\StringTok{\textquotesingle{}ACF \textquotesingle{}} \OperatorTok{+}\NormalTok{ model\_name)}
+\NormalTok{  y}\OperatorTok{=}\NormalTok{plot\_pacf(ts, ax}\OperatorTok{=}\NormalTok{ax3, title}\OperatorTok{=}\StringTok{\textquotesingle{}PACF \textquotesingle{}} \OperatorTok{+}\NormalTok{ model\_name)}
+
+\NormalTok{  plt.tight\_layout()}
+\NormalTok{  plt.show()}
+  \ControlFlowTok{return}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ statsmodels.api }\ImportTok{as}\NormalTok{ sm}
+\ImportTok{from}\NormalTok{ statsmodels.tsa.arima\_process }\ImportTok{import}\NormalTok{ arma\_generate\_sample}
+\NormalTok{np.random.seed(}\DecValTok{1234}\NormalTok{)}
+
+\NormalTok{model\_name }\OperatorTok{=} \StringTok{\textquotesingle{}ARMA(1,1)\textquotesingle{}}
+\NormalTok{ar }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{1}\NormalTok{,}\OperatorTok{{-}}\FloatTok{0.3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{]) }\CommentTok{\# list ar\_coefs has the form [1, {-}a\_1, {-}a\_2, ..., {-}a\_p]}
+\NormalTok{ma }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{1}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{])  }\CommentTok{\# list ma\_coefs has the form [1, m\_1, m\_2, ..., m\_q]}
+\NormalTok{ts }\OperatorTok{=}\NormalTok{ arma\_generate\_sample(ar, ma, nsample}\OperatorTok{=}\DecValTok{100}\NormalTok{)}
+\NormalTok{plot\_ts\_acf\_pacf(ts,model\_name)}
+
+\NormalTok{model\_name }\OperatorTok{=} \StringTok{\textquotesingle{}ARMA(2,3)\textquotesingle{}}
+\NormalTok{ar }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{1}\NormalTok{,}\OperatorTok{{-}}\FloatTok{0.4}\NormalTok{,}\OperatorTok{{-}}\FloatTok{0.3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{])}
+\NormalTok{ma }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{1}\NormalTok{])}
+\NormalTok{ts }\OperatorTok{=}\NormalTok{ arma\_generate\_sample(ar, ma, nsample}\OperatorTok{=}\DecValTok{100}\NormalTok{)}
+\NormalTok{plot\_ts\_acf\_pacf(ts,model\_name)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/14a75d47f639614c1c758a2ec67d9070eb34eddc.png}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/ccc6578a9313772f6d039dbfc1d1232841bd0341.png}
+
+\hypertarget{34-aplicando-um-modelo-arima}{%
+\subsection{3.4. Aplicando um modelo
+ARIMA}\label{34-aplicando-um-modelo-arima}}
+
+Após uma exploração e entendimento dos dados a aplicação do modelo ARIMA
+envolve, desse modo, os seguintes passos:
+
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{Análise da estacionariedade da série}, e escolha do parâmetro
+  \(d\) de diferenciação que torna a série estacionária nos casos em que
+  não é estacionária.
+\item
+  \textbf{Verificação da autocorrelação e autocorrelação parcial da
+  série}, identificando os potenciais valores \(p\) (através da PACF) e
+  \(q\) (através da ACF) do modelo.
+\item
+  \textbf{Análise dos modelos e seleção dos parâmetros}, seguindo alguma
+  métrica de desempenho do modelo como o critério de informação de
+  Akaike (AIC) ou o critério Bayesiano de Schwarz (BIC) \(^1\).
+\item
+  \textbf{Análise dos resíduos}, observando-se a normalidade e
+  independência dos resíduos.
+\item
+  \textbf{Previsões}, com o modelo selecionado.
+\end{enumerate}
+
+\(^1\) Note que a escolha de valores \(p\) (através do PACF) e \(q\)
+(através ACF) influenciam-se mutuamente e, por exemplo, não pode haver
+uma autocorrelação parcial de ordem 1 com uma correlação de ordem 0.
+
+\hypertarget{341-anuxe1lise-da-estacionariedade-da-suxe9rie}{%
+\subsubsection{3.4.1. Análise da estacionariedade da
+série}\label{341-anuxe1lise-da-estacionariedade-da-suxe9rie}}
+
+Vamos produzir uma série sintética simulando uma série ARIMA(2,1,3). A
+série original é não estacionária mas a série diferenciada de ordem 1
+torna-se estacionária. Obtemos então nosso parâmetro \(d=1\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#@markdown}
+\KeywordTok{def}\NormalTok{ simulate\_ARIMA(phi }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{0}\NormalTok{]), theta }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{0}\NormalTok{]), d }\OperatorTok{=} \DecValTok{0}\NormalTok{, t }\OperatorTok{=} \DecValTok{0}\NormalTok{, mu }\OperatorTok{=} \DecValTok{0}\NormalTok{, sigma }\OperatorTok{=} \DecValTok{1}\NormalTok{, n }\OperatorTok{=} \DecValTok{20}\NormalTok{, burn }\OperatorTok{=} \DecValTok{10}\NormalTok{, seed}\OperatorTok{=}\DecValTok{1}\NormalTok{):}
+\CommentTok{\# adaptado de https://github.com/TOMILO87}
+    \CommentTok{""" Simulate data from ARMA model (eq. 1.2.4):}
+
+\CommentTok{    z\_t = phi\_1*z\_\{t{-}1\} + ... + phi\_p*z\_\{t{-}p\} + a\_t + theta\_1*a\_\{t{-}1\} + ... + theta\_q*a\_\{t{-}q\}}
+
+\CommentTok{    with d unit roots for ARIMA model.}
+
+\CommentTok{    Arguments:}
+\CommentTok{    phi {-}{-} array of shape (p,) or (p, 1) containing phi\_1, phi2, ... for AR model}
+\CommentTok{    theta {-}{-} array of shape (q) or (q, 1) containing theta\_1, theta\_2, ... for MA model}
+\CommentTok{    d {-}{-} number of unit roots for non{-}stationary time series}
+\CommentTok{    t {-}{-} value deterministic linear trend}
+\CommentTok{    mu {-}{-} mean value for normal distribution error term}
+\CommentTok{    sigma {-}{-} standard deviation for normal distribution error term}
+\CommentTok{    n {-}{-} length time series}
+\CommentTok{    burn {-}{-} number of discarded values because series beginns without lagged terms}
+\CommentTok{    seed {-}{-} numpy random state}
+
+\CommentTok{    Return:}
+\CommentTok{    x {-}{-} simulated ARMA process of shape (n, 1)}
+
+\CommentTok{    Reference:}
+\CommentTok{    Time Series Analysis by Box et al.}
+\CommentTok{    """}
+\NormalTok{    np.random.seed(seed)}
+
+    \CommentTok{\# add "theta\_0" = 1 to theta}
+\NormalTok{    theta }\OperatorTok{=}\NormalTok{ np.append(}\DecValTok{1}\NormalTok{, theta)}
+
+    \CommentTok{\# set max lag length AR model}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ phi.shape[}\DecValTok{0}\NormalTok{]}
+
+    \CommentTok{\# set max lag length MA model}
+\NormalTok{    q }\OperatorTok{=}\NormalTok{ theta.shape[}\DecValTok{0}\NormalTok{]}
+
+    \CommentTok{\# simulate n + q error terms}
+\NormalTok{    a }\OperatorTok{=}\NormalTok{ np.random.normal(mu, sigma, (n }\OperatorTok{+} \BuiltInTok{max}\NormalTok{(p, q) }\OperatorTok{+}\NormalTok{ burn, }\DecValTok{1}\NormalTok{))}
+
+    \CommentTok{\# create array for returned values}
+\NormalTok{    x }\OperatorTok{=}\NormalTok{ np.zeros((n }\OperatorTok{+} \BuiltInTok{max}\NormalTok{(p, q) }\OperatorTok{+}\NormalTok{ burn, }\DecValTok{1}\NormalTok{))}
+
+    \CommentTok{\# initialize first time series value}
+\NormalTok{    x[}\DecValTok{0}\NormalTok{] }\OperatorTok{=}\NormalTok{ a[}\DecValTok{0}\NormalTok{]}
+
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, x.shape[}\DecValTok{0}\NormalTok{]):}
+\NormalTok{        AR }\OperatorTok{=}\NormalTok{ np.dot(phi[}\DecValTok{0}\NormalTok{ : }\BuiltInTok{min}\NormalTok{(i, p)], np.flip(x[i }\OperatorTok{{-}} \BuiltInTok{min}\NormalTok{(i, p) : i], }\DecValTok{0}\NormalTok{))}
+\NormalTok{        MA }\OperatorTok{=}\NormalTok{ np.dot(theta[}\DecValTok{0}\NormalTok{ : }\BuiltInTok{min}\NormalTok{(i }\OperatorTok{+} \DecValTok{1}\NormalTok{, q)], np.flip(a[i }\OperatorTok{{-}} \BuiltInTok{min}\NormalTok{(i, q }\OperatorTok{{-}} \DecValTok{1}\NormalTok{) : i }\OperatorTok{+} \DecValTok{1}\NormalTok{], }\DecValTok{0}\NormalTok{))}
+\NormalTok{        x[i] }\OperatorTok{=}\NormalTok{ AR }\OperatorTok{+}\NormalTok{ MA }\OperatorTok{+}\NormalTok{ t}
+
+    \CommentTok{\# add unit roots}
+    \ControlFlowTok{if}\NormalTok{ d }\OperatorTok{!=} \DecValTok{0}\NormalTok{:}
+\NormalTok{        ARMA }\OperatorTok{=}\NormalTok{ x[}\OperatorTok{{-}}\NormalTok{n: ]}
+\NormalTok{        m }\OperatorTok{=}\NormalTok{ ARMA.shape[}\DecValTok{0}\NormalTok{]}
+\NormalTok{        z }\OperatorTok{=}\NormalTok{ np.zeros((m }\OperatorTok{+} \DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\CommentTok{\# create temp array}
+
+        \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(d):}
+            \ControlFlowTok{for}\NormalTok{ j }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(m):}
+\NormalTok{                z[j }\OperatorTok{+} \DecValTok{1}\NormalTok{] }\OperatorTok{=}\NormalTok{ ARMA[j] }\OperatorTok{+}\NormalTok{ z[j]}
+\NormalTok{            ARMA }\OperatorTok{=}\NormalTok{ z[}\DecValTok{1}\NormalTok{: ]}
+\NormalTok{        x[}\OperatorTok{{-}}\NormalTok{n: ] }\OperatorTok{=}\NormalTok{ z[}\DecValTok{1}\NormalTok{: ]}
+
+    \ControlFlowTok{return}\NormalTok{ x[}\OperatorTok{{-}}\NormalTok{n: ]}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ simulate\_ARIMA(phi }\OperatorTok{=}\NormalTok{ np.array([}\FloatTok{0.8}\NormalTok{]), theta }\OperatorTok{=}\NormalTok{ np.array([}\FloatTok{0.6}\NormalTok{, }\FloatTok{0.2}\NormalTok{]), d}\OperatorTok{=}\DecValTok{1}\NormalTok{, n }\OperatorTok{=} \DecValTok{100}\NormalTok{)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(df.flatten(),columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}values\textquotesingle{}}\NormalTok{])}
+\NormalTok{df.index }\OperatorTok{=}\NormalTok{ pd.date\_range(start}\OperatorTok{=}\StringTok{\textquotesingle{}6/1/2015\textquotesingle{}}\NormalTok{, periods }\OperatorTok{=} \DecValTok{100}\NormalTok{, freq}\OperatorTok{=}\StringTok{\textquotesingle{}M\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              values
+2015-06-30 -2.453310
+2015-07-31 -3.577104
+2015-08-31 -4.972580
+2015-09-30 -6.694570
+2015-10-31 -9.273456
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.plot(df, label }\OperatorTok{=} \StringTok{\textquotesingle{}Série não estacionária, ADF p{-}value = \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(adfuller(ts)[}\DecValTok{1}\NormalTok{],}\DecValTok{4}\NormalTok{)))}
+\NormalTok{plt.plot(df.diff(), }\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{, label }\OperatorTok{=} \StringTok{\textquotesingle{}Série diferenciada d=1, ADF p{-}value = \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(adfuller(df.diff().dropna())[}\DecValTok{1}\NormalTok{],}\DecValTok{4}\NormalTok{)))}
+
+\NormalTok{plt.legend()}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Série sintética\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/6b487fcc48d7a921d7c36c6c2c108be25628b7c4.png}
+
+\hypertarget{342-verificauxe7uxe3o-da-autocorrelauxe7uxe3o-e-autocorrelauxe7uxe3o-parcial-da-suxe9rie}{%
+\subsubsection{3.4.2. Verificação da autocorrelação e autocorrelação
+parcial da
+série}\label{342-verificauxe7uxe3o-da-autocorrelauxe7uxe3o-e-autocorrelauxe7uxe3o-parcial-da-suxe9rie}}
+
+Os parâmetros \(p\) e \(q\) são obtidos respectivamente da análise dos
+gráficos de autocorrelação parcial e autocorrelação, e obtemos assim os
+valores \(p=3\) e \(q=3\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_ts\_acf\_pacf(df.diff().dropna(),}\StringTok{\textquotesingle{}ARMA(3,3)\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/c850e78afc070e08d86124301c8b92b84275e0c3.png}
+
+\hypertarget{343-anuxe1lise-dos-modelos-e-seleuxe7uxe3o-dos-paruxe2metros}{%
+\subsubsection{3.4.3. Análise dos modelos e seleção dos
+parâmetros}\label{343-anuxe1lise-dos-modelos-e-seleuxe7uxe3o-dos-paruxe2metros}}
+
+Podemos então aplicar esses parâmetros e analisar o ajuste da série e
+métricas do modelo obtido.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ statsmodels.tsa.arima.model }\ImportTok{import}\NormalTok{ ARIMA}
+
+\NormalTok{p }\OperatorTok{=} \DecValTok{3}\OperatorTok{;}\NormalTok{ d }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ q }\OperatorTok{=} \DecValTok{3}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ ARIMA(df, order}\OperatorTok{=}\NormalTok{(p, d, q))}
+\NormalTok{results }\OperatorTok{=}\NormalTok{ model.fit(method\_kwargs}\OperatorTok{=}\NormalTok{\{}\StringTok{\textquotesingle{}maxiter\textquotesingle{}}\NormalTok{:}\DecValTok{700}\NormalTok{\})}
+
+\NormalTok{plt.plot(df,label}\OperatorTok{=}\StringTok{\textquotesingle{}real\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(results.fittedvalues, }\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{, label}\OperatorTok{=}\StringTok{\textquotesingle{}ARIMA(\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(p) }\OperatorTok{+} \StringTok{\textquotesingle{},\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(d) }\OperatorTok{+} \StringTok{\textquotesingle{},\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(q) }\OperatorTok{+} \StringTok{\textquotesingle{})\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.title(}\SpecialStringTok{f\textquotesingle{}AIC = }\SpecialCharTok{\{}\NormalTok{results}\SpecialCharTok{.}\NormalTok{aic}\SpecialCharTok{:.2f\}}\SpecialStringTok{ MSE = }\SpecialCharTok{\{}\NormalTok{results}\SpecialCharTok{.}\NormalTok{mse}\SpecialCharTok{:.2f\}}\SpecialStringTok{ MAE = }\SpecialCharTok{\{}\NormalTok{results}\SpecialCharTok{.}\NormalTok{mae}\SpecialCharTok{:.2f\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.legend()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/0b772b9df1b57a94d7d57a318b1b6c79665940d1.png}
+
+O sumário do \texttt{statsmodels} fornece uma série de informações para
+análise do modelo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(results.summary())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                 values   No. Observations:                  100
+Model:                 ARIMA(3, 1, 3)   Log Likelihood                -116.041
+Date:                Sat, 13 Jan 2024   AIC                            246.083
+Time:                        04:16:33   BIC                            264.248
+Sample:                    06-30-2015   HQIC                           253.432
+                         - 09-30-2023                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1          1.4131      0.357      3.955      0.000       0.713       2.113
+ar.L2         -1.2381      0.399     -3.106      0.002      -2.019      -0.457
+ar.L3          0.6095      0.198      3.072      0.002       0.221       0.998
+ma.L1          0.1014      0.378      0.269      0.788      -0.639       0.841
+ma.L2          0.4784      0.297      1.612      0.107      -0.103       1.060
+ma.L3          0.3000      0.208      1.442      0.149      -0.108       0.708
+sigma2         0.5939      0.085      6.959      0.000       0.427       0.761
+===================================================================================
+Ljung-Box (L1) (Q):                   0.03   Jarque-Bera (JB):                 1.76
+Prob(Q):                              0.87   Prob(JB):                         0.41
+Heteroskedasticity (H):               0.70   Skew:                             0.31
+Prob(H) (two-sided):                  0.32   Kurtosis:                         3.21
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+\end{verbatim}
+
+Ele consiste de 3 partes. Na primeira parte há informações gerais do
+modelo, como ordem do modelo, número de amostras e métricas como o AIC e
+BIC. Na segunda, há os coeficientes estimados, sua significância e
+intervalo de confiança. A terceira parte traz indicadores para análise
+dos resíduos.
+
+Os gráficos das funções PACF e ACF sugerem valores de \(p\) e \(q\) a
+serem empregados. Mas podemos buscar alguma métrica de desempenho do
+modelo, como uma métrica de erro ou o AIC, para busca dos melhores
+parâmetros.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{warnings.filterwarnings(}\StringTok{\textquotesingle{}ignore\textquotesingle{}}\NormalTok{)}
+\NormalTok{model\_list }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}\NormalTok{ AIC\_list }\OperatorTok{=}\NormalTok{ []}
+
+\NormalTok{d }\OperatorTok{=} \DecValTok{1}
+\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{):}
+  \ControlFlowTok{for}\NormalTok{ q }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{):}
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ ARIMA(df, order}\OperatorTok{=}\NormalTok{(p, d, q))}
+\NormalTok{    results }\OperatorTok{=}\NormalTok{ model.fit(method\_kwargs}\OperatorTok{=}\NormalTok{\{}\StringTok{\textquotesingle{}maxiter\textquotesingle{}}\NormalTok{:}\DecValTok{700}\NormalTok{\})}
+\NormalTok{    model\_list.append(}\StringTok{\textquotesingle{}ARIMA(\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(p) }\OperatorTok{+} \StringTok{\textquotesingle{},\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(d) }\OperatorTok{+} \StringTok{\textquotesingle{},\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(q) }\OperatorTok{+} \StringTok{\textquotesingle{})\textquotesingle{}}\NormalTok{)}
+\NormalTok{    AIC\_list.append(np.}\BuiltInTok{round}\NormalTok{(results.aic,}\DecValTok{4}\NormalTok{))}
+
+\NormalTok{results\_df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}model\textquotesingle{}}\NormalTok{: model\_list, }\StringTok{\textquotesingle{}AIC\textquotesingle{}}\NormalTok{: np.array(AIC\_list) \}).sort\_values(}\StringTok{\textquotesingle{}AIC\textquotesingle{}}\NormalTok{,ascending}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{display(results\_df)}
+
+\NormalTok{warnings.filterwarnings(}\StringTok{\textquotesingle{}ignore\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+          model       AIC
+2  ARIMA(2,1,4)  248.3544
+6  ARIMA(4,1,2)  247.5014
+1  ARIMA(2,1,3)  247.3347
+4  ARIMA(3,1,3)  246.0826
+3  ARIMA(3,1,2)  246.0429
+8  ARIMA(4,1,4)  245.6695
+0  ARIMA(2,1,2)  245.4423
+5  ARIMA(3,1,4)  245.4241
+7  ARIMA(4,1,3)  244.4067
+\end{verbatim}
+
+Assim, para o melhor desempenho pela métrica AIC podemos escolher os
+valores \(p = 2, d = 1, q = 4\) e, então, analisar se os erros obtidos
+satisfazem as premissas do modelo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OperatorTok{=} \DecValTok{2}\OperatorTok{;}\NormalTok{ d }\OperatorTok{=} \DecValTok{1}\OperatorTok{;}\NormalTok{ q }\OperatorTok{=} \DecValTok{4}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ ARIMA(df, order}\OperatorTok{=}\NormalTok{(p, d, q))}
+\NormalTok{results }\OperatorTok{=}\NormalTok{ model.fit(method\_kwargs}\OperatorTok{=}\NormalTok{\{}\StringTok{\textquotesingle{}maxiter\textquotesingle{}}\NormalTok{:}\DecValTok{700}\NormalTok{\})}
+\BuiltInTok{print}\NormalTok{(results.summary())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:                 values   No. Observations:                  100
+Model:                 ARIMA(2, 1, 4)   Log Likelihood                -117.177
+Date:                Sat, 13 Jan 2024   AIC                            248.354
+Time:                        04:16:37   BIC                            266.520
+Sample:                    06-30-2015   HQIC                           255.704
+                         - 09-30-2023                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1          1.4308      0.556      2.574      0.010       0.341       2.520
+ar.L2         -0.4610      0.464     -0.994      0.320      -1.370       0.448
+ma.L1          0.0946      0.562      0.168      0.866      -1.007       1.197
+ma.L2         -0.3271      0.386     -0.847      0.397      -1.084       0.430
+ma.L3         -0.3064      0.165     -1.857      0.063      -0.630       0.017
+ma.L4         -0.1494      0.187     -0.799      0.424      -0.516       0.217
+sigma2         0.6086      0.095      6.402      0.000       0.422       0.795
+===================================================================================
+Ljung-Box (L1) (Q):                   0.01   Jarque-Bera (JB):                 0.84
+Prob(Q):                              0.92   Prob(JB):                         0.66
+Heteroskedasticity (H):               0.72   Skew:                             0.15
+Prob(H) (two-sided):                  0.35   Kurtosis:                         3.34
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+\end{verbatim}
+
+\hypertarget{344-anuxe1lise-dos-resuxedduos}{%
+\subsubsection{3.4.4. Análise dos
+resíduos}\label{344-anuxe1lise-dos-resuxedduos}}
+
+Na parte dos indicadores de resíduos os valores \texttt{Prob}
+correspondem a p-valores das métricas indicadas (no exemplo, p-value
+Ljung-Box = 0.92 \textgreater{} 0.05 indica que os resíduos são ruído
+branco e p-value Jarque-Bera = 0.66 \textgreater{} 0.05 indica que os
+resíduos tem uma distribuição normal).
+
+A análise dos resíduos ainda é normalmente complementada com análise dos
+gráficos da função \texttt{plot\_diagnostics()} para, além da
+normalidade, verificarmos a independência dos valores de erro. No
+exemplo, como podemos ver, os erros não estão corelacionados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fig }\OperatorTok{=}\NormalTok{ plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{,}\DecValTok{7}\NormalTok{))}
+
+\NormalTok{results.plot\_diagnostics(fig}\OperatorTok{=}\NormalTok{fig)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/c4819ae700e77e7e858c4f0b18120c0cda7cb10c.png}
+
+\hypertarget{345-previsuxf5es}{%
+\subsubsection{3.4.5. Previsões}\label{345-previsuxf5es}}
+
+Uma vez selecionado o modelo podemos fazer previsões de valores futuros
+da série. Por exemplo, a predição para os próximos 6 meses.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ statsmodels.graphics.tsaplots }\ImportTok{import}\NormalTok{ plot\_predict}
+
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\NormalTok{ax.plot(df,label}\OperatorTok{=}\StringTok{\textquotesingle{}real\textquotesingle{}}\NormalTok{)}
+\NormalTok{plot\_predict(results, start}\OperatorTok{=}\NormalTok{pd.to\_datetime(}\StringTok{\textquotesingle{}2015{-}07{-}31\textquotesingle{}}\NormalTok{), end}\OperatorTok{=}\NormalTok{pd.to\_datetime(}\StringTok{\textquotesingle{}2024{-}03{-}31\textquotesingle{}}\NormalTok{),ax}\OperatorTok{=}\NormalTok{ax) }\CommentTok{\# alerta: start deve ser ao menos d períodos a frente do início da série}
+\CommentTok{\# plot\_predict(results, start=1, end=len(ts) + 6,ax=ax) \# aqui, funciona o mesmo modo}
+
+\NormalTok{ax.set\_title(}\StringTok{\textquotesingle{}Série sintética\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/9c5f60ba429d4cc192e611399269e23da00c2a61.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{results.forecast(}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2023-10-31    62.313898
+2023-11-30    62.791316
+2023-12-31    63.171009
+2024-01-31    63.401228
+2024-02-29    63.555601
+2024-03-31    63.670354
+Freq: M, Name: predicted_mean, dtype: float64
+\end{verbatim}
+
+\hypertarget{35-exercuxedcios-e-referuxeancias}{%
+\subsection{3.5. Exercícios e
+referências}\label{35-exercuxedcios-e-referuxeancias}}
+
+As referências da seção anterior, Montgomery et al. (2015), Chatfield
+(1996), Morettin e Toloi (2006) são livros texto acessíveis e bastante
+úteis aqui para compreender os modelos ARIMA e seus submodelos, enquanto
+Box et. al. (2015) é um texto avançado.
+
+Análise e implementações de modelos clássicos em R podem ser encontradas
+em Coghlan (2024), Shmueli et al. (2016) e Hyndman e Athanasopoulos
+(2018). Peixeiro (2022) traz implementações em Python com o pacote
+\texttt{statsmodels}, sendo mais próximo das implementações empregadas
+aqui. Nielsen (2019) é outro texto voltado para modelos práticos de
+séries temporais em Python, incluindo modelos de espaço de estados e de
+aprendizado de máquina.
+
+Por último a documentação statsmodels (2024) é essencial para a
+compreensão das implementações e exercícios desta seção que podem ser
+acessados no material complementar do curso em
+\href{https://github.com/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/exerc_parte2_arima.ipynb}{exerc\_parte2\_arima}.
+
+\hypertarget{4-aprendizado-de-muxe1quina}{%
+\section{\texorpdfstring{\textbf{4. Aprendizado de
+máquina}}{4. Aprendizado de máquina}}\label{4-aprendizado-de-muxe1quina}}
+
+Os modelos autoregressivos, como vimos, baseiam-se em modelos de
+regressão linear. Modelos de aprendizado de máquina supervisionado
+também podem ser empregados para fazer previsões de valores futuros de
+séries temporais e têm tido um sucesso grande em fornecer previsões mais
+precisas para séries muito complexas, em particular modelos baseados em
+redes neurais profundas desenvolvidas com \texttt{PyTorch} ou
+\texttt{TensorFlow/Keras}, ou modelos híbridos como o Greykite (2024)
+(LinkedIn) e Prophet (2024) (Meta). As diferenças entre um modelo
+estatístico e um modelo de aprendizado de máquina residem na capacidade
+de precisão e explicabilidade de cada modelo e, de modo bastante
+simples, poderíamos dizer que trata-se de uma escolha entre fazer
+previsão mais precisa (modelos de aprendizado de máquina) ou compreender
+os processos subjacentes aos dados (modelos estatísticos), não excluindo
+o caso em que ambas as técnicas podem ser aplicadas.
+
+Independente se empregamos um modelo de aprendizado de máquina clássico
+(como regressores de árvores de decisão, florestas de árvores aleatórias
+e k-vizinhos mais próximos) ou de redes neurais, incluindo aprendizado
+profundo (\emph{deep learning}), o processo é bastante semelhante
+partindo por empregar os valores defasados da série como variáveis
+preditoras (como vimos no modelo autoregressivo anteriormente). Este
+processo está representado na figura 2.
+
+\textbf{Figura 2. Esquema geral do aprendizado de máquina (regressão) e
+da engenharia de atributos para séries temporais.}
+
+Em todos os casos, dado uma classe de modelos que desejamos empregar
+para aproximar uma série, o modelo é ajustado até que se alcance um erro
+mínimo por alguma métrica (como o MSE). Diferentemente de um modelo
+estatístico, como o ARIMA, a aplicação do modelo de não requer nenhum
+pressuposto como estacionariedade, não sazonalidade ou independência e
+normalidade dos resíduos, sendo seu único objetivo aproximar ao máximo a
+série que se deeja modelar. Esse aspecto de \emph{caixa-preta} ou de
+\emph{força-bruta}, principalmente nos modelos de aprendizado profundo,
+é uma das principais críticas na aplicação desses tipo de modelo em
+séries temporais. Entretanto, eles podem obter resultados de
+previsibilidade bastante bons em casos muito complexos.
+
+São inúmeras as classes de modelos e bibliotecas disponíveis. Mas sendo
+o esquema geral de aplicação do método o mesmo, vamos apresentar uma
+aplicação com modelos clássicos de aprendizado empregando o pacote
+\texttt{scikit-learn} e outra de aprendizado profundo, com
+\texttt{TensorFlow/Keras}, o que para os nossos propósitos parece ser
+suficiente.
+
+\hypertarget{41-scikit-learn}{%
+\subsection{4.1. Scikit-learn}\label{41-scikit-learn}}
+
+O \texttt{scikit-learn} é a principal biblioteca de aprendizado de
+máquina de modelos clássicos (não profundo), incluindo modelos de
+aprendizado supervisionado (classificação, regressão) e não
+supervisionado (clusterização, detecção de anomalias, redução de
+dimensionalidade). Para predição de séries temporais empregamos modelos
+regressores e uma relação dos modelos disponíveis encontram-se a seguir.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# alguns dos estimadores de regressão disponíveis no scikit{-}learn}
+\ImportTok{from}\NormalTok{ sklearn.linear\_model }\ImportTok{import}\NormalTok{ LinearRegression}
+\ImportTok{from}\NormalTok{ sklearn.neighbors }\ImportTok{import}\NormalTok{ KNeighborsRegressor}
+\ImportTok{from}\NormalTok{ sklearn.svm }\ImportTok{import}\NormalTok{ SVR}
+\ImportTok{from}\NormalTok{ xgboost.sklearn }\ImportTok{import}\NormalTok{ XGBRegressor}
+\ImportTok{from}\NormalTok{ sklearn.tree }\ImportTok{import}\NormalTok{ DecisionTreeRegressor}
+\ImportTok{from}\NormalTok{ sklearn.linear\_model }\ImportTok{import}\NormalTok{ BayesianRidge}
+\ImportTok{from}\NormalTok{ sklearn.linear\_model }\ImportTok{import}\NormalTok{ ElasticNet}
+\ImportTok{from}\NormalTok{ sklearn.kernel\_ridge }\ImportTok{import}\NormalTok{ KernelRidge}
+\ImportTok{from}\NormalTok{ sklearn.linear\_model }\ImportTok{import}\NormalTok{ SGDRegressor}
+\ImportTok{from}\NormalTok{ sklearn.ensemble }\ImportTok{import}\NormalTok{ GradientBoostingRegressor}
+\ImportTok{from}\NormalTok{ sklearn.neural\_network }\ImportTok{import}\NormalTok{ MLPRegressor}
+\end{Highlighting}
+\end{Shaded}
+
+Cada um desses modelos tem um \emph{princípio}, ou fundamento, mas que
+não entraremos em detalhe aqui. Assim, um estimador como
+\texttt{MLPRegressor} empregará uma rede neural para aproximar uma
+série, enquanto um \texttt{DecisionTreeRegressor} empregará uma árvore
+de decisão baseada na distribuição dos valores. Quaisquer desses
+estimadores podem ser igualmente aplicados.
+
+\hypertarget{411-exemplo-1}{%
+\subsubsection{4.1.1. Exemplo 1}\label{411-exemplo-1}}
+
+Vamos empregar a série \texttt{co2} utilizada antes. Já criamos os dados
+defasados da série para serem as variáveis preditoras do modelos. Desse
+modo, faremos fazer o ajuste do modelo para,
+
+\[ (CO2_{t-1},CO2_{t-2}) \longrightarrow CO2_t \]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ co2}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            time     CO2  CO2_t-1  CO2_t-2
+Date                                      
+1981-07-01     2  340.32   342.08   342.74
+1981-08-01     3  338.26   340.32   342.08
+1981-09-01     4  336.52   338.26   340.32
+1981-10-01     5  336.68   336.52   338.26
+1981-11-01     6  338.19   336.68   336.52
+\end{verbatim}
+
+Um conceito importante na construção de modelos de aprendizado de
+máquina é o conceito de \textbf{conjuntos de treinamento e teste}. A
+ideia é separar dados empregados para o treinamento do modelo daqueles
+que são empregados para mensurar o seu desempenho. Há várias formas de
+fazer isso e, tipicamente, são empregados um percentual de dados
+aleatórios para treinamento (80\% por exemplo) e teste (20\%). Mas uma
+alternativa ao tratarmos de séries temporais considerarmos para teste os
+dados mais recentes (por exemplo, os 20\% que correspondem aos dados
+mais recentes).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# conjuntos de treinamento e teste}
+\NormalTok{train\_size }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(df) }\OperatorTok{*} \FloatTok{0.80}\NormalTok{)}
+\NormalTok{train\_data, test\_data }\OperatorTok{=}\NormalTok{ df.iloc[}\DecValTok{0}\NormalTok{:train\_size], df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)]}
+\end{Highlighting}
+\end{Shaded}
+
+O código a seguir é um padrão para o uso de estimadores do
+\texttt{scikit-learn} e o estimador (modelo) empregado a seguir pode ser
+substituído por quaisquer dos outros regressores disponíveis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X\_train, y\_train, X\_test, y\_test }\OperatorTok{=}\NormalTok{ train\_data[[}\StringTok{\textquotesingle{}CO2\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}CO2\_t{-}2\textquotesingle{}}\NormalTok{]], train\_data[[}\StringTok{\textquotesingle{}CO2\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}CO2\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}CO2\_t{-}2\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}CO2\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# modelo}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ LinearRegression()}
+\CommentTok{\# model = DecisionTreeRegressor() \# try this!}
+
+\CommentTok{\# treinamento do modelo}
+\NormalTok{model.fit(X\_train, y\_train)}
+
+\CommentTok{\# pedição com o modelo treinado}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_train)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_test)}
+
+\CommentTok{\# show results}
+\NormalTok{plt.plot(df.iloc[}\DecValTok{0}\NormalTok{:train\_size].index, train\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Ajuste \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(model) }\OperatorTok{+} \StringTok{\textquotesingle{}, score= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(model.score(X\_train,y\_train),}\DecValTok{2}\NormalTok{)))}
+\NormalTok{plt.plot(df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)].index, test\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Forecast\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(df.CO2,}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}Série original\textquotesingle{}}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}CO2 Emissions\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\NormalTok{\_ }\OperatorTok{=}\NormalTok{ error\_measures(y\_test.values.flatten(), test\_predict.flatten())}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/bcb740ec9195bddf7b381123b2d4a67de5fc7a77.png}
+
+\begin{verbatim}
+MSE: 	 1.1527
+MAE: 	 0.8495
+RMSE: 	 1.0737
+MAPE: 	 0.0023
+\end{verbatim}
+
+\hypertarget{412-exemplo-2}{%
+\subsubsection{4.1.2. Exemplo 2}\label{412-exemplo-2}}
+
+Um conjunto de dados mais complexo pode, entretanto, exigir um modelo
+mais robusto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/dados\_bike\_cnt.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\CommentTok{\# valores defasados}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift()}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift(}\DecValTok{2}\NormalTok{)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.dropna()}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+             cnt  cnt_t-1  cnt_t-2
+timestamp                         
+2015-02-03  2972   3556.0   1117.0
+2015-02-04  3502   2972.0   3556.0
+2015-02-05  2894   3502.0   2972.0
+2015-02-06  3214   2894.0   3502.0
+2015-02-07  1165   3214.0   2894.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# conjuntos de treinamento e teste}
+\NormalTok{train\_size }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(df) }\OperatorTok{*} \FloatTok{0.80}\NormalTok{)}
+\NormalTok{train\_data, test\_data }\OperatorTok{=}\NormalTok{ df.iloc[}\DecValTok{0}\NormalTok{:train\_size], df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)]}
+
+\NormalTok{X\_train, y\_train, X\_test, y\_test }\OperatorTok{=}\NormalTok{ train\_data[[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{]], train\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# modelo}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ DecisionTreeRegressor()}
+
+\CommentTok{\# treinamento do modelo}
+\NormalTok{model.fit(X\_train, y\_train)}
+
+\CommentTok{\# predição com o modelo treinado}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_train)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_test)}
+
+\CommentTok{\# show results}
+\NormalTok{plt.plot(df.iloc[}\DecValTok{0}\NormalTok{:train\_size].index, train\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Ajuste \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(model) }\OperatorTok{+} \StringTok{\textquotesingle{}, score= \textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(np.}\BuiltInTok{round}\NormalTok{(model.score(X\_train,y\_train),}\DecValTok{2}\NormalTok{)))}
+\NormalTok{plt.plot(df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)].index, test\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Forecast\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(df.cnt,}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}Série original\textquotesingle{}}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Bike sharing\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\NormalTok{\_ }\OperatorTok{=}\NormalTok{ error\_measures(y\_test.values.flatten(), test\_predict.flatten())}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/1c0bc0ca4eda753312662a588fe3357ccafa5531.png}
+
+\begin{verbatim}
+MSE: 	 1516080.7667
+MAE: 	 1014.1000
+RMSE: 	 1231.2923
+MAPE: 	 0.2694
+\end{verbatim}
+
+\hypertarget{42-tensorflowkeras}{%
+\subsection{4.2. TensorFlow/Keras}\label{42-tensorflowkeras}}
+
+O \texttt{TensorFlow} é uma biblioteca para a implementação de
+aprendizado profundo que permite criar modelos bastante complexos e uso
+de recursos de processamento em gpu, e o \texttt{Keras} fornece uma
+interface de mais alto nível para sua programação. Diferentes tipos de
+redes podem ser empregados e vamos empregar aqui dois modelos, um modelo
+de camadas sequenciais (ou rede multilayer perceptron) e um modelo LSTM
+(long short-term memory) que é uma arquitetura de rede neural recorrente
+bastante empregados em modelos de séries temporais. Modelos profundos
+vem tendo sucesso no tratamento de dados muitos complexos que e envolvem
+grandes volumes de dados, grande ruído e variabilidade, além de séries
+múltiplas de dados.
+
+\hypertarget{421-exemplo-1}{%
+\subsubsection{4.2.1. Exemplo 1}\label{421-exemplo-1}}
+
+Empregamos os mesmos dados de Bike Sharing do exemplo anterior para
+buscarmos resultados melhores com um modelo neural. O uso de pacotes de
+aprendizado profundo é em geral mais complexo e o leitor pode buscar
+mais detalhes da programação envolvida aqui na documentação do Keras
+(2024).
+
+Em um modelo neural é comum normalizarmos os dados (que são
+desnormalizados na previsão dos valores). O código a seguir implementa
+um modelo sequencial, mas que pode ser substituído pelo modelo
+recorrente LSTM comentado no código. Ambos os modelos apresentam um
+resultado melhor que o obtido pelo modelo clássico anterior.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ MinMaxScaler}
+\ImportTok{from}\NormalTok{ keras.models }\ImportTok{import}\NormalTok{ Sequential}
+\ImportTok{from}\NormalTok{ keras.layers }\ImportTok{import}\NormalTok{ Dense, LSTM}
+
+\NormalTok{cnt\_original }\OperatorTok{=}\NormalTok{ df[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]] }\CommentTok{\# salva antes da normalização}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# normalizando os dados}
+\NormalTok{scaler }\OperatorTok{=}\NormalTok{ MinMaxScaler(feature\_range}\OperatorTok{=}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ scaler.fit\_transform(df)}
+
+\CommentTok{\# valores defasados normalizados}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift()}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift(}\DecValTok{2}\NormalTok{)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.dropna()}
+
+\CommentTok{\# conjuntos de treinamento e teste}
+\NormalTok{train\_size }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(df) }\OperatorTok{*} \FloatTok{0.80}\NormalTok{)}
+\NormalTok{train\_data, test\_data }\OperatorTok{=}\NormalTok{ df.iloc[}\DecValTok{0}\NormalTok{:train\_size], df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)]}
+
+\NormalTok{X\_train, y\_train, X\_test, y\_test }\OperatorTok{=}\NormalTok{ train\_data[[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{]], train\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{]], test\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# modelo MLP ou LSTM}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ Sequential()}
+
+\CommentTok{\# MLP, MAPE \textasciitilde{} 0.14}
+\NormalTok{model.add(Dense(}\DecValTok{64}\NormalTok{, input\_dim}\OperatorTok{=}\NormalTok{X\_train.shape[}\DecValTok{1}\NormalTok{], activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+\NormalTok{model.add(Dense(}\DecValTok{512}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+\NormalTok{model.add(Dense(}\DecValTok{64}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+
+\CommentTok{\# LSTM, MAPE \textasciitilde{} 0.16 \# comente as linhas acima e empregue estas para o modelo LSTM}
+\CommentTok{\# model.add(LSTM(units=1024, return\_sequences=True, input\_shape=(X\_train.shape[1], 1)))}
+\CommentTok{\# model.add(LSTM(units=32))}
+
+\NormalTok{model.add(Dense(}\DecValTok{1}\NormalTok{))}
+\NormalTok{model.}\BuiltInTok{compile}\NormalTok{(optimizer}\OperatorTok{=}\StringTok{\textquotesingle{}adam\textquotesingle{}}\NormalTok{, loss}\OperatorTok{=}\StringTok{\textquotesingle{}mean\_squared\_error\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# treinamento do modelo}
+\NormalTok{model.fit(X\_train, y\_train, epochs}\OperatorTok{=}\DecValTok{50}\NormalTok{, batch\_size}\OperatorTok{=}\DecValTok{16}\NormalTok{, verbose}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+
+\CommentTok{\# predição com o modelo treinado}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_train)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_test)}
+
+\CommentTok{\# invertendo a normalização}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(train\_predict)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(test\_predict)}
+
+\NormalTok{y\_test }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(y\_test)}
+
+\CommentTok{\# show results}
+\NormalTok{plt.plot(df.iloc[}\DecValTok{0}\NormalTok{:train\_size].index, train\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Ajuste do modelo \textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)].index, test\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Forecast\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(cnt\_original,}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}Série original\textquotesingle{}}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{6}\NormalTok{)}
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Bike Sharing\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.show()}
+
+\NormalTok{\_ }\OperatorTok{=}\NormalTok{ error\_measures(y\_test.flatten(), test\_predict.flatten())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+4/4 [==============================] - 0s 7ms/step
+1/1 [==============================] - 0s 26ms/step
+\end{verbatim}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/b735f829caa6f14e816deed326f3d389d73b1ada.png}
+
+\begin{verbatim}
+MSE: 	 650567.3823
+MAE: 	 621.2500
+RMSE: 	 806.5776
+MAPE: 	 0.1504
+\end{verbatim}
+
+\hypertarget{422-exemplo-2}{%
+\subsubsection{4.2.2. Exemplo 2}\label{422-exemplo-2}}
+
+Até aqui empregamos somente os valores da própria série para a previsão
+de novos valores. Entretanto nossa série pode ser influenciada por
+variáveis exógenas. O volume de vendas dependendo da taxa de inflação, o
+consumo de energia dependendo no volume de chuvas no período e assim por
+diante. No exemplo a seguir incluímos o dados de humidade para melhorar
+a nossa previsão do volume de compartilhamento de bicicletas, uma vez
+que para uma maior humidade do clima (chuva) é esperado uma menor
+procura por bicicletas. O resultado melhora a previsão anterior, embora
+um modelo com mais elementos seja necessário.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_cnt\_hum }\OperatorTok{=}\NormalTok{ pd.read\_csv(course\_path }\OperatorTok{+} \StringTok{\textquotesingle{}/data/dados\_bike\_cnt\_hum.csv\textquotesingle{}}\NormalTok{,index\_col}\OperatorTok{=}\DecValTok{0}\NormalTok{,parse\_dates}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{df\_cnt\_hum.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+             cnt   hum
+timestamp             
+2015-02-01  1117  87.0
+2015-02-02  3556  70.0
+2015-02-03  2972  93.0
+2015-02-04  3502  93.0
+2015-02-05  2894  93.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df\_cnt\_hum[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# normalizando os dados}
+\NormalTok{scaler }\OperatorTok{=}\NormalTok{ MinMaxScaler(feature\_range}\OperatorTok{=}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ scaler.fit\_transform(df)}
+
+\CommentTok{\# valores defasados normalizados}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift()}
+\NormalTok{df[}\StringTok{\textquotesingle{}cnt\_t{-}2\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{].shift(}\DecValTok{2}\NormalTok{)}
+
+\CommentTok{\# incluindo uma variável exógena}
+\NormalTok{scaler2 }\OperatorTok{=}\NormalTok{ MinMaxScaler(feature\_range}\OperatorTok{=}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{df[[}\StringTok{\textquotesingle{}hum\textquotesingle{}}\NormalTok{]] }\OperatorTok{=}\NormalTok{ scaler2.fit\_transform(df\_cnt\_hum[[}\StringTok{\textquotesingle{}hum\textquotesingle{}}\NormalTok{]])}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.dropna()}
+
+\CommentTok{\# conjuntos de treinamento e teste}
+\NormalTok{train\_size }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(df) }\OperatorTok{*} \FloatTok{0.80}\NormalTok{)}
+\NormalTok{train\_data, test\_data }\OperatorTok{=}\NormalTok{ df.iloc[}\DecValTok{0}\NormalTok{:train\_size], df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)]}
+
+\NormalTok{X\_train, y\_train, X\_test, y\_test }\OperatorTok{=}\NormalTok{ train\_data.drop(columns}\OperatorTok{=}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{), train\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]], test\_data.drop(columns}\OperatorTok{=}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{), test\_data[[}\StringTok{\textquotesingle{}cnt\textquotesingle{}}\NormalTok{]]}
+
+\CommentTok{\# modelo MLP, MAPE \textasciitilde{} 0.12}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ Sequential()}
+
+\NormalTok{model.add(Dense(}\DecValTok{64}\NormalTok{, input\_dim}\OperatorTok{=}\NormalTok{X\_train.shape[}\DecValTok{1}\NormalTok{], activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+\NormalTok{model.add(Dense(}\DecValTok{512}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+\NormalTok{model.add(Dense(}\DecValTok{512}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+\NormalTok{model.add(Dense(}\DecValTok{64}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{))}
+
+\NormalTok{model.add(Dense(}\DecValTok{1}\NormalTok{))}
+\NormalTok{model.}\BuiltInTok{compile}\NormalTok{(optimizer}\OperatorTok{=}\StringTok{\textquotesingle{}adam\textquotesingle{}}\NormalTok{, loss}\OperatorTok{=}\StringTok{\textquotesingle{}mean\_squared\_error\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# treinamento do modelo}
+\NormalTok{model.fit(X\_train, y\_train, epochs}\OperatorTok{=}\DecValTok{50}\NormalTok{, batch\_size}\OperatorTok{=}\DecValTok{16}\NormalTok{, verbose}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+
+\CommentTok{\# predição com o modelo treinado}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_train)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ model.predict(X\_test)}
+
+\CommentTok{\# invertendo a normalização}
+\NormalTok{train\_predict }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(train\_predict)}
+\NormalTok{test\_predict }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(test\_predict)}
+
+\NormalTok{y\_test }\OperatorTok{=}\NormalTok{ scaler.inverse\_transform(y\_test)}
+
+\CommentTok{\# show results}
+\NormalTok{plt.plot(df.iloc[}\DecValTok{0}\NormalTok{:train\_size].index, train\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Ajuste do modelo \textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(df.iloc[train\_size:}\BuiltInTok{len}\NormalTok{(df)].index, test\_predict,label}\OperatorTok{=}\StringTok{\textquotesingle{}Forecast\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.plot(df\_cnt\_hum.cnt,}\StringTok{\textquotesingle{}k{-}{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}série original\textquotesingle{}}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# deslocando a escala apenas para exibição dos dados de hum}
+\NormalTok{hum }\OperatorTok{=}\NormalTok{ MinMaxScaler(feature\_range}\OperatorTok{=}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{1500}\NormalTok{)).fit\_transform(df\_cnt\_hum[[}\StringTok{\textquotesingle{}hum\textquotesingle{}}\NormalTok{]]).flatten()}
+\NormalTok{plt.plot(df\_cnt\_hum.index,hum,}\StringTok{\textquotesingle{}g{-}\textquotesingle{}}\NormalTok{,label}\OperatorTok{=}\StringTok{\textquotesingle{}variável exógena, hum\textquotesingle{}}\NormalTok{,lw}\OperatorTok{=}\DecValTok{1}\NormalTok{,alpha}\OperatorTok{=}\FloatTok{0.95}\NormalTok{)}
+
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Bike Sharing\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.show()}
+
+\NormalTok{\_ }\OperatorTok{=}\NormalTok{ error\_measures(y\_test.flatten(), test\_predict.flatten())}
+
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{vertopal_cd2a7d0aca704e3c99335e671d94fbc0/9c59e074c95ea0a33bcc09d6797b851e5ca77154.png}
+
+\begin{verbatim}
+MSE: 	 517079.1224
+MAE: 	 520.1264
+RMSE: 	 719.0821
+MAPE: 	 0.1259
+\end{verbatim}
+
+\hypertarget{43-exercuxedcios-de-referuxeancias}{%
+\subsection{4.3. Exercícios de
+referências}\label{43-exercuxedcios-de-referuxeancias}}
+
+Kong et al. (2020) e Vanderplas (2016) trazem uma introdução prática ao
+aprendizado de máquina clássico (não profundo) em Python com
+\texttt{scikit-learn}. Entretanto, assim como a maioria dos livros
+textos de aprendizado de máquina, o foco está em modelos de
+classificação e regressão de valores, e não em séries temporais. Se você
+quiser saber mais sobre implementações de aprendizado profundo Zhang et
+al. (2022) é um texto avançado, completo e online que traz exemplos em
+\texttt{TensorFlow}, \texttt{PyTorch} e \texttt{MXNET}. Nielsen (2019)
+traz modelos práticos de aprendizado clássico e profundo de séries em
+Python, mas os modelos de redes profundas empregam \texttt{MXNET}, bem
+menos empregado que as bibliotecas \texttt{TensorFlow} e
+\texttt{PyTorch}.
+
+Embora tenham um \emph{esquema geral} simples de implementação
+(engenharia dos atributos, ajuste do modelo e previsão), os possíveis
+modelos e suas implementações, sejam de aprendizado clássico ou
+profundo, são bastante variados e a consulta da documentação das
+bibliotecas scikit-learn (2024), TensoFlow (2024) e Keras (2024) é
+essencial para entendimento dos exemplos aqui e para que você possa
+realizar as suas implementações.
+
+Para esta seção, os exercícios e soluções podem ser acessados em
+\href{https://github.com/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/exerc_parte3_ml.ipynb}{exerc\_parte3\_ml}.
+
+\hypertarget{6-conclusuxe3o}{%
+\section{\texorpdfstring{\textbf{6.
+Conclusão}}{6. Conclusão}}\label{6-conclusuxe3o}}
+
+Neste minicurso você pode entender alguns dos conceitos fundamentais de
+séries temporais e como lidar com séries temporais em \texttt{Python} e
+\texttt{Pandas}. Pode aprender como construir e analisar modelos
+estatísticos do tipo ARIMA (incluídos os modelos AR, MA, ARMA) com a
+biblioteca \texttt{statsmodels}, e a partir deles você poderá facilmente
+evoluir modelos mais complexos como o SARIMA, SARIMAX. Você também
+aprendeu como aplicar modelos de aprendizado de máquina clássicos e de
+aprendizado profundo com as bibliotecas \texttt{scikit-learn} e
+\texttt{TensorFlow/Keras} a partir da engenharia dos atributos da série,
+incluindo o uso de variáveis exógenas.
+
+Esse poderá ser um ferramental bastante útil para você, na vida
+profissional ou para seus projetos de pesquisa, e a ferramenta certa -
+aprendizado de máquina, ou estatística clássica - e o modelo específico
+a ser utilizado, em última análise, dependerá do contexto mais amplo do
+seu problema.
+
+Há um grande número de temas que não foram abordados aqui como
+intervalos de confiância, diversos outros modelos estatísticos,
+critérios de seleção de modelos, conceitos de ajuste no aprendizado de
+máquina ou validação cruzada, etc. mas contamos que você encontrará aqui
+um ótimo ponto de partida para se aprofundar nesses pontos quando
+precisar.
+
+\hypertarget{material-complementar}{%
+\section{\texorpdfstring{\textbf{Material
+complementar}}{Material complementar}}\label{material-complementar}}
+
+Exercícios, conjuntos de dados e outros materiais do curso podem ser
+acessados em
+\url{https://github.com/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024}.
+
+\hypertarget{referuxeancias}{%
+\section{\texorpdfstring{\textbf{Referências}}{Referências}}\label{referuxeancias}}
+
+Box, G. E., Jenkins, G. M., Reinsel, G. C., Ljung, G. M. (2015).
+\textbf{Time series analysis: forecasting and control}. John Wiley \&
+Sons.
+
+Chatfield, C. (1996) \textbf{The analysis of time series: an
+introduction.} Chapman and hall/CRC.
+
+Coghlan, A. (2024) \textbf{Welcome to a little book of R for time
+series}. Parasite Genomics Group, Cambridge, U.K.
+\url{https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/}.
+Acesso em: 12 jan. 2024.
+
+De Gooijer, J. G., Hyndman, R. J. (2006) \textbf{25 years of time series
+forecasting.} International journal of forecasting, v. 22, n. 3, p.
+443-473.
+
+Greykite. Disponível em: \url{https://linkedin.github.io/greykite/}.
+Acesso em: 12 jan. 2024.
+
+Hyndman, R. J., Athanasopoulos, G. (2018) \textbf{Forecasting:
+principles and practice}.
+
+Keras. Disponível em: \url{https://keras.io/}. Acesso em: 12 jan. 2024.
+
+Kong, Q., Siauw, T., Bayen, A. (2020) \textbf{Python Programming and
+Numerical Methods: A Guide for Engineers and Scientists}. Academic
+Press, 2020. Disponível em:
+\url{https://pythonnumericalmethods.berkeley.edu/notebooks/Index.html}.
+Acesso em: 12 jan. 2024.
+
+Montgomery, D. C., Jennings, C. L.; Kulahci, M. (2015)
+\textbf{Introduction to time series analysis and forecasting}. John
+Wiley \& Sons.
+
+Morettin, P. A., Toloi, C. (2006) \textbf{Análise de séries temporais}.
+In: Análise de séries temporais.
+
+Nielsen, A. (2019) \textbf{Practical time series analysis: Prediction
+with statistics and machine learning}. O\textquotesingle Reilly Media.
+
+Oliveira, R. (2022). \textbf{Visualizacao de Dados em Python}. ISBN:
+978-65-5545-511-3. Coleção Conexão Inicial. Editora Mackenzie.
+
+Oliveira, R., Albarracin, O. Y. E., Silva, G. R. (2024)
+\textbf{Introdução às Séries Temporais: Uma Abordagem Prática em Python}
+(in printing). Coleção Conexão Inicial. Editora Mackenzie. Disponível
+em: \url{https://github.com/Introducao-Series-Temporais-em-Python}
+Acesso em: 12 jan. 2024.
+
+Pandas. Disponível em: \url{https://pandas.pydata.org/}. Acesso em: 12
+jan. 2024.
+
+Peixeiro, M. (2022) \textbf{Time Series Forecasting in Python}.
+
+Prophet. Disponível em: \url{https://facebook.github.io/prophet/}.
+Acesso em: 12 jan. 2024.
+
+scikit-learn. Disponível em: \url{https://scikit-learn.org/stable/}.
+Acesso em: 12 jan. 2024.
+
+Shmueli, G., Lichtendahl Jr. K. C. (2016) \textbf{Practical time series
+forecasting with r: A hands-on guide}. Axelrod schnall publishers.
+
+statsmodels. Disponível em:
+\url{https://www.statsmodels.org/stable/index.html}. Acesso em: 12 jan.
+2024.
+
+TensorFlow. Disponível em: \url{https://www.tensorflow.org/}. Acesso em:
+12 jan. 2024.
+
+Vanderplas, J. (2016) \textbf{Python data science handbook: Essential
+tools for working with data.} O\textquotesingle Reilly Media, Inc.,
+2016. Disponível em:
+\url{https://jakevdp.github.io/PythonDataScienceHandbook/} Acesso em: 12
+jan. 2024.
+
+Zhang, A. et al. (2021) \textbf{Dive into deep learning.} arXiv preprint
+arXiv:2106.11342, 2021. Disponível em: \url{https://d2l.ai/}. Acesso em:
+12 jan. 2024.
+
+\end{document}
