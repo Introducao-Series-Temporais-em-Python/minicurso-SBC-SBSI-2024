@@ -17,9 +17,11 @@ Rogério de Oliveira | rogerio.oliveira@{mackenzie.br | maua.br}
 > [Lab Introd](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte1_introd.ipynb) |
 [Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte1_introd_solucao.ipynb)
 
-> [Lab Arima](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_arima.ipynb)
+> [Lab Arima](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_arima.ipynb) |
+[Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_arima.ipynb)
 
-> [Lab ML](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte3_ml.ipynb)
+> [Lab ML](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte3_ml.ipynb) |
+[Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_ml.ipynb)
 
 ### Projetos | Ideias
 
