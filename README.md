@@ -1,8 +1,12 @@
-# minicurso-SBC-SBSI-2024
+# **Introdução às Séries Temporais em Python**
+
+### minicurso-SBC-SBSI-2024
 
 Rogério de Oliveira | rogerio.oliveira@{mackenzie.br | maua.br}
 
 [TS Mini Curso](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/SBSI_2024_tsminicourse.ipynb)
+
+> [Livro SBSI](https://books-sol.sbc.org.br/index.php/sbc/catalog/book/138)
 
 > [TS no Mundo](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/SBSI2024_timeseriescourse_inTheWorld.ipynb)
 
