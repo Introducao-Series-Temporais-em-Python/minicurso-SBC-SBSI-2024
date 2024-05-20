@@ -21,7 +21,7 @@ Rogério de Oliveira | rogerio.oliveira@{mackenzie.br | maua.br}
 [Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_arima_solucao.ipynb)
 
 > [Lab ML](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte3_ml.ipynb) |
-[Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte2_ml_solucao.ipynb)
+[Lab solução](https://colab.research.google.com/github/Introducao-Series-Temporais-em-Python/minicurso-SBC-SBSI-2024/blob/main/exerc_parte3_ml_solucao.ipynb)
 
 ### Projetos | Ideias
 
